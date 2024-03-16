@@ -3,7 +3,7 @@
 #include <string.h>
 
 char** buf[3][1024];
-short int index = 0;
+short int indx = 0;
 
 short int* wyznaczRozmiar (FILE* plik){
     plik = fopen("plik","r");
@@ -59,24 +59,24 @@ void stworzPunkty(char** buf,short int* rozmiar){
     fgets(buf[2], rozmiar[1], "plik");
 
     while (1){// dopoki nie skonczy sie plik (wczytywanie w pionie) [TRZEBA DODAC ODPOWIEDNI WARUNEK]
-        if (index == 0){ //to jest pierwsza linijka
+        if (indx == 0){ //to jest pierwsza linijka
             for (int i = 0; i < rozmiar[1]; i++){ //przeczytaj całą linijkę i sprawdź, czy to nie jest przypadkiem rozgałęzienie
                 if(wyznaczRozgalezienia(buf,0,i) != 0){
-                    init_node(index,i);
+                    init_node(indx,i);
                 }
             }
         }
-        else if (index == rozmiar[1]){ //to jest ostatnia linijka            
+        else if (indx == rozmiar[1]){ //to jest ostatnia linijka            
             for (int i = 0; i < rozmiar[1]; i++){
                 if(wyznaczRozgalezienia(buf,2,i) != 0){
-                    init_node(index,i);
+                    init_node(indx,i);
                 }
             }
         }
         else{ //to nie jest pierwsza ani ostatnia linijka
             for (int i = 0; i < rozmiar[1]; i++){
                 if(wyznaczRozgalezienia(buf,1,i) != 0){
-                    init_node(index,i);
+                    init_node(indx,i);
                 }
             }
         }
