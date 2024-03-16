@@ -1,6 +1,7 @@
 #include "graf.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 node_t *init_node(short x, short y) {
   node_t *n = malloc(sizeof(node_t *));
   n->count = 0;

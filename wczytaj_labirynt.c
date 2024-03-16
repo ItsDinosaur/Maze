@@ -2,9 +2,6 @@
 #include "graf.h"
 #include <string.h>
 
-char** buf[3][1024];
-short int index = 0;
-
 short int* wyznaczRozmiar (FILE* plik){
     plik = fopen("plik","r");
     if (plik == NULL){
@@ -25,10 +22,10 @@ short int* wyznaczRozmiar (FILE* plik){
     return rozmiar;
 }
 
-char** wczytajKolejny(char** buf, short int b){
+char** wczytajKolejny(char** buf, short int b, FILE* plik){ //jak blad to upewnic sie zeby nie wczytywac wiecej jak 3 rzedy przed koncem pliku, aka ta funkcja nie zajmuje sie tym, najwyzej dostaniesz NULLa
     strcpy(buf[1],buf[2]);
     strcpy(buf[2],buf[3]);
-    fgets(buf[3], b, "plik");
+    fgets(buf[3], b, plik);
     return buf;
 }
 
@@ -52,26 +49,29 @@ char wyznaczRozgalezienia(char** buf, char r, char i){
     return 0; //to nie jest ani rozgalezienie ani zakret
 }
 
-void stworzPunkty(char** buf,short int* rozmiar){
+void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
     char i = 0;
-    fgets(buf[0], rozmiar[1], "plik");
-    fgets(buf[1], rozmiar[1], "plik");
-    fgets(buf[2], rozmiar[1], "plik");
+    short int index = 0;
+    fopen(plik,"r");
+    fgets(buf[0], rozmiar[1], plik);
+    fgets(buf[1], rozmiar[1], plik);
+    fgets(buf[2], rozmiar[1], plik);
 
-    while (1){// dopoki nie skonczy sie plik (wczytywanie w pionie) [TRZEBA DODAC ODPOWIEDNI WARUNEK]
-        if (index == 0){ //to jest pierwsza linijka
+    while (index+1 != rozmiar[0]){// dopoki nie skonczy sie plik (wczytywanie w pionie)
+        if (index == 0){ //to jest pierwsza linijka (obecnie mazanie po pamieci, bo porownuje sie z niewczytanym miejscem; nie ma nic nad pierwszym rzedem)
             for (int i = 0; i < rozmiar[1]; i++){ //przeczytaj całą linijkę i sprawdź, czy to nie jest przypadkiem rozgałęzienie
                 if(wyznaczRozgalezienia(buf,0,i) != 0){
                     init_node(index,i);
                 }
             }
         }
-        else if (index == rozmiar[1]){ //to jest ostatnia linijka            
+        else if (index == rozmiar[1] - 1){ //to jest ostatnia linijka (obecnie mazanie po pamieci, bo porownuje sie z niewczytanym miejscem; nie ma nic pod ostatnim rzedem)           
             for (int i = 0; i < rozmiar[1]; i++){
                 if(wyznaczRozgalezienia(buf,2,i) != 0){
                     init_node(index,i);
                 }
             }
+            break;
         }
         else{ //to nie jest pierwsza ani ostatnia linijka
             for (int i = 0; i < rozmiar[1]; i++){
@@ -80,5 +80,6 @@ void stworzPunkty(char** buf,short int* rozmiar){
                 }
             }
         }
+        index++;
     }
 }
