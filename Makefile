@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall
+CFLAGS = -Wall -std=c99
 TARGET = maze
 
 SRCS = main.c graf.c wczytaj_labirynt.c
