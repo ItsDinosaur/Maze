@@ -61,14 +61,14 @@ void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
         if (index == 0){ //to jest pierwsza linijka (obecnie mazanie po pamieci, bo porownuje sie z niewczytanym miejscem; nie ma nic nad pierwszym rzedem)
             for (int i = 0; i < rozmiar[1]; i++){ //przeczytaj całą linijkę i sprawdź, czy to nie jest przypadkiem rozgałęzienie
                 if(wyznaczRozgalezienia(buf,0,i) != 0){
-                    init_node(index,i);
+                    init_node(indx,i);
                 }
             }
         }
         else if (index == rozmiar[1] - 1){ //to jest ostatnia linijka (obecnie mazanie po pamieci, bo porownuje sie z niewczytanym miejscem; nie ma nic pod ostatnim rzedem)           
             for (int i = 0; i < rozmiar[1]; i++){
                 if(wyznaczRozgalezienia(buf,2,i) != 0){
-                    init_node(index,i);
+                    init_node(indx,i);
                 }
             }
             break;
@@ -76,7 +76,7 @@ void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
         else{ //to nie jest pierwsza ani ostatnia linijka
             for (int i = 0; i < rozmiar[1]; i++){
                 if(wyznaczRozgalezienia(buf,1,i) != 0){
-                    init_node(index,i);
+                    init_node(indx,i);
                 }
             }
         }
