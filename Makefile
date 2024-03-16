@@ -1,18 +1,19 @@
+CC = gcc
 CFLAGS = -Wall
+TARGET = maze
 
-all: final
+SRCS = main.c graf.c wczytaj_labirynt.c
+OBJS = $(SRCS:.c=.o)
 
-final: main.o graf.o wczyt.o
-	gcc $(CFLAGS) main.o graf.o 
+.PHONY: clean
 
-main.o: main.c
-	gcc $(CFLAGS) main.c
+all: $(TARGET)
 
-graf.o: graf.c
-	gcc $(CFLAGS) graf.c
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-wczyt.o: wczytaj_labirynt.c
-	gcc $(CFLAGS) wczytaj_labirynt.c
+%.o: %.c pomoc.h graf.h wczytaj_labirynt.h
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm main.o graf.o final
+	rm $(OBJS)
