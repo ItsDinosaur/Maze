@@ -5,29 +5,46 @@
 #include <getopt.h>
 int main(int argc, char **argv) {
   int opt;
-  node_t *nowy = init_node(0, 0);
-  for (int i = 0; i < 10; i++) {
-    increase(nowy);
-    printf("|%d\n", nowy->count);
-  }
-
-  while((opt = getopt(argc, argv, ":ho:f:s:")) != -1){
+  FILE *in;
+  char *fileInputName, fileOutputName;
+  char trybSzukania;
+  char isGood=0;
+  
+  while((opt = getopt(argc, argv, "ho:f:s:")) != -1){
     switch (opt)
     {
       case 'h':
           wyswietl_pomoc();
           return 0;
         break;
-      case '?':
-        printf("Nieznana opcja: %c. Zajrzyj do help -h\n", optopt);
+      case 'f':
+        fileInputName = optarg;
+        isGood=1;
         break;
-      case ':':
-        printf("Brak wartosci do opcji %c\n", optopt);
+      case 'o':
+        fileOutputName = optarg;
+        break;
+      case 's':
+        trybSzukania = atoi(optarg);
+        if(trybSzukania != 1 && trybSzukania != 2){
+          fprintf(stderr, "Flaga -s przyjmuje wartosci z zakresu {1, 2}\n");
+          wyswietl_pomoc();
+          return 1;
+        }
         break;
       default:
-        fprintf(stderr, "Brak flagi obowiązkowej -f\n");
+        break;
     }
   }
-
+  if (argc == 1 || isGood != 1) {
+    fprintf(stderr, "Brak flagi obowiązkowej -f\n");
+    wyswietl_pomoc();
+    return 1;
+  }
+  node_t *nowy = init_node(0, 0);
+  for (int i = 0; i < 10; i++) {
+    increase(nowy);
+    printf("|%d\n", nowy->count);
+  }
   return 0;
 }
