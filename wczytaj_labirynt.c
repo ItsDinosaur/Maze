@@ -105,5 +105,6 @@ void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
             }
         }
         index++;
+        wczytajKolejny(buf,rozmiar[0],plik);
     }
 }
