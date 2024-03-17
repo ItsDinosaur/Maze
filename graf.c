@@ -18,3 +18,8 @@ void increase(node_t *node) {
   }
   node->count++;
 }
+
+void link_nodes(node_t *parent, node_t *child){
+  increase(parent);
+  parent->links[parent->count- 1 ] = child;
+}

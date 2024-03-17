@@ -8,5 +8,6 @@ typedef struct n {
 
 node_t *init_node(short x, short y);
 void increase(node_t *node);
+void link_nodes(node_t *parent, node_t *child);
 
 #endif

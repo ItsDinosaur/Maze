@@ -41,10 +41,17 @@ int main(int argc, char **argv) {
     wyswietl_pomoc();
     return 1;
   }
+  /* PRZETESTOWANIE LINKOWANIA / DZIAŁA
   node_t *nowy = init_node(0, 0);
   for (int i = 0; i < 10; i++) {
-    increase(nowy);
-    printf("|%d\n", nowy->count);
+    node_t *next = init_node(i, i);
+    link_nodes(nowy, next);
+    for(int j=0; j<nowy->count; j++){
+      printf("%d -> %d, %d\n", j, nowy->links[j]->x, nowy->links[j]->y);
+    }
   }
+  */
+
+
   return 0;
 }
