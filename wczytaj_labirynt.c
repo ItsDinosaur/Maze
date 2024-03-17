@@ -47,6 +47,9 @@ char wyznaczRozgalezienia(char** buf, char r, char i){
         if (zgory && zprawej || zprawej && zdolu || zdolu && zlewej || zlewej && zgory) return 2; //to jest zakret
     }
     return 0; //to nie jest ani rozgalezienie ani zakret
+
+    //całe te ify nie maja sensu, wystarczy return ilosc i jak nie ma rozgalezien to i tak bedzie 0 jak ma 2 to ma 2 czyli zakret, jak
+    // wiecej to wyswietli sie wiecej...
 }
 
 void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
