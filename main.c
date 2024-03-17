@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include "znajdz_rozwiazanie.h"
 int main(int argc, char **argv) {
   int opt;
   FILE *in;
@@ -41,16 +42,21 @@ int main(int argc, char **argv) {
     wyswietl_pomoc();
     return 1;
   }
-  /* PRZETESTOWANIE LINKOWANIA / DZIAŁA
+  // PRZETESTOWANIE LINKOWANIA / DZIAŁA
   node_t *nowy = init_node(0, 0);
   for (int i = 0; i < 10; i++) {
     node_t *next = init_node(i, i);
     link_nodes(nowy, next);
-    for(int j=0; j<nowy->count; j++){
+    /*for(int j=0; j<nowy->count; j++){
       printf("%d -> %d, %d\n", j, nowy->links[j]->x, nowy->links[j]->y);
-    }
+    }*/
   }
-  */
+  node_t *last = init_node(15,10);
+  link_nodes(nowy, last);
+  
+  printf("DFS Path:\n");
+  if (!dfs(nowy, last))
+    printf("No path found from first to last node.\n");
 
   return 0;
 }
