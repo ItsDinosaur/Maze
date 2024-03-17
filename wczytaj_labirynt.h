@@ -5,7 +5,7 @@
 
 short int* wyznaczRozmiar (FILE* plik);
 char** wczytajKolejny(char** buf, short int b);
-char wyznaczRozgalezienia(char** buf, char r, char i);
+char wyznaczRozgalezienia(char** buf, char r, char i, char strona);
 void stworzPunkty(char** buf,short int* rozmiar);
 
 #endif
