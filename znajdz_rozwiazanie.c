@@ -1,19 +1,24 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "graf.h"
+#include "rozwiazanie.h"
 
-bool dfs(node_t *current, node_t *target) {
+bool dfs(node_t *current, node_t *target, list_t *path) {
+    
     if (current == target) {
-        printf("Node (%d, %d) found!\n", current->x, current->y);
+        *path = append(*path, current->x, current->y);
         return true;
     }
 
     for (int i = 0; i < current->count; i++) {
-        if (dfs(current->links[i], target)) {
-            printf("Node (%d, %d) found!\n", current->x, current->y);
+        *path = append(*path, current->x, current->y);
+        if (dfs(current->links[i], target, path)) {
             return true;
         }
+        
     }
-
+    if (*path != NULL) {
+        *path = (*path)->next;
+    }
     return false;
 }

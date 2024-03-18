@@ -6,6 +6,6 @@ typedef struct r{
     short x,y;
 } *list_t;
 
-void append(list_t l, short x, short y);
+list_t append(list_t l, short x, short y);
 
 #endif

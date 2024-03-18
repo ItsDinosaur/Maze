@@ -71,6 +71,8 @@ char wyznaczRozgalezienia(char** buf, char row, char collumn, char strona){
     // wiecej to wyswietli sie wiecej...
 
     //ten dlugi if jest zeby rozroznic miedzy prosta droga a zakretem
+
+    //okej rozumiem juz(;
 }
 
 int dobryZnak(char c){

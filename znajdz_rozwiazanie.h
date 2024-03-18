@@ -3,7 +3,8 @@
 
 #include <stdbool.h>
 #include "graf.h"
+#include "rozwiazanie.h"
 
-bool dfs(node_t *current, node_t *target);
+bool dfs(node_t *current, node_t *target , list_t *l);
 
 #endif
