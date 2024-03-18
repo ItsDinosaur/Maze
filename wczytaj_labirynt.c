@@ -1,24 +1,26 @@
 #include <stdio.h>
 #include "graf.h"
 #include <string.h>
+#include "znajdz_rozwiazanie.h"
+#include <stdlib.h>
 
 short int* wyznaczRozmiar (FILE* plik){
-    plik = fopen(plik,"r");
-    if (plik == NULL){
-        printf("Blad wczytywania pliku %s\n",plik);
-    }
+    short int* rozmiar = malloc (2*sizeof(short int));
     short int a = 0;
     short int b = 0;
     char c;
-    while (c = fgetc(plik) != EOF){
+    while ((c = fgetc(plik)) != EOF){
         if (c == '\n'){
             b++;
+            continue;
         }
         else {
             a++;
         }
     }
-    short int* rozmiar[2] = {a,b};
+    rozmiar[0] = a/b;
+    rozmiar[1] = b;
+    printf("Rozmiar tego labiryntu to: %d x %d\n",rozmiar[0],rozmiar[1]);
     return rozmiar;
 }
 
@@ -65,26 +67,24 @@ char wyznaczRozgalezienia(char** buf, char row, char collumn, char strona){
         if (zgory && zprawej || zprawej && zdolu || zdolu && zlewej || zlewej && zgory) return 2;
         }
     }
-    return 0; //to nie jest ani rozgalezienie ani zakret
-    
-    //całe te ify nie maja sensu, wystarczy return ilosc i jak nie ma rozgalezien to i tak bedzie 0 jak ma 2 to ma 2 czyli zakret, jak
-    // wiecej to wyswietli sie wiecej...
-
-    //ten dlugi if jest zeby rozroznic miedzy prosta droga a zakretem
+    return 0;
 }
 
 int dobryZnak(char c){
     if (c == 'X' || c == 'P' || c == 'K' || c == ' '){
+        printf("'%c' to jest dobry znak\n",c);
         return 1;
     }
+    printf("'%c' to zly znak\n",c);
     return 0;
 }
 
-void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
+node_t** stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
     char i = 0;
     char bladSkladni = 0;
     short int index = 0;
-    fopen(plik,"r");
+    short indx = 0;
+    node_t* punkty[100];
     fgets(buf[0], rozmiar[1], plik);
     fgets(buf[1], rozmiar[1], plik);
     fgets(buf[2], rozmiar[1], plik);
@@ -94,7 +94,7 @@ void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
             for (int i = 1; i < rozmiar[0]-1; i++){ //przeczytaj całą linijkę i sprawdź, czy to nie jest przypadkiem rozgałęzienie
                 if (!(dobryZnak(buf[index][i]))) bladSkladni = 1;
                 if(wyznaczRozgalezienia(buf,0,i,'G') != 0){
-                    init_node(index,i);
+                    punkty[indx++] = init_node(index,i);
                 }
             }
         }
@@ -102,7 +102,7 @@ void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
             for (int i = 1; i < rozmiar[0]-1; i++){
                 if (!(dobryZnak(buf[index][i]))) bladSkladni = 1;
                 if(wyznaczRozgalezienia(buf,2,i,'D') != 0){
-                    init_node(index,i);
+                    punkty[indx++] = init_node(index,i);
                 }
             }
             break;
@@ -111,7 +111,7 @@ void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
             for (int i = 1; i < rozmiar[0]-1; i++){
                 if (!(dobryZnak(buf[index][i]))) bladSkladni = 1;
                 if(wyznaczRozgalezienia(buf,1,i,'W') != 0){
-                    init_node(index,i);
+                    punkty[indx++] = init_node(index,i);
                 }
             }
         }
@@ -122,4 +122,5 @@ void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
         index++;
         wczytajKolejny(buf,rozmiar[0],plik);
     }
+    return punkty;
 }
