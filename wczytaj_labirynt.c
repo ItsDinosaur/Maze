@@ -68,6 +68,7 @@ char wyznaczRozgalezienia(char** buf, char row, char collumn, char strona){
         }
     }
     return 0;
+
 }
 
 int dobryZnak(char c){
