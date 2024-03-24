@@ -80,30 +80,48 @@ int dobryZnak(char c){
     return 0;
 }
 
-node_t** stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
+void stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
     char i = 0;
     char bladSkladni = 0;
     short int index = 0;
     short indx = 0;
-    node_t* punkty[100];
+    node_t* horizontalLinker;
+    node_t* horizontalLinker1;
     fgets(buf[0], rozmiar[1], plik);
     fgets(buf[1], rozmiar[1], plik);
     fgets(buf[2], rozmiar[1], plik);
 
     while (index+1 != rozmiar[0]){// dopoki nie skonczy sie plik (wczytywanie w pionie); index oraz romiar[1] to pion, i oraz rozmiar[0] to poziom
+        horizontalLinker = NULL;
         if (index == 0){ //to jest pierwsza linijka
             for (int i = 1; i < rozmiar[0]-1; i++){ //przeczytaj całą linijkę i sprawdź, czy to nie jest przypadkiem rozgałęzienie
                 if (!(dobryZnak(buf[index][i]))) bladSkladni = 1;
+                if (buf[index][i] == 'X') horizontalLinker = NULL;
                 if(wyznaczRozgalezienia(buf,0,i,'G') != 0){
-                    punkty[indx++] = init_node(index,i);
+                    if (horizontalLinker == NULL){
+                    horizontalLinker = init_node(index,i);
+                    }
+                    else{
+                        horizontalLinker1 = init_node(index,i);
+                        link_nodes(horizontalLinker, horizontalLinker1);
+                        horizontalLinker = horizontalLinker1;
+                    }
                 }
             }
         }
         else if (index == rozmiar[1] - 1){ //to jest ostatnia linijka        
             for (int i = 1; i < rozmiar[0]-1; i++){
                 if (!(dobryZnak(buf[index][i]))) bladSkladni = 1;
+                if (buf[index][i] == 'X') horizontalLinker = NULL;
                 if(wyznaczRozgalezienia(buf,2,i,'D') != 0){
-                    punkty[indx++] = init_node(index,i);
+                    if (horizontalLinker == NULL){
+                    horizontalLinker = init_node(index,i);
+                    }
+                    else{
+                        horizontalLinker1 = init_node(index,i);
+                        link_nodes(horizontalLinker, horizontalLinker1);
+                        horizontalLinker = horizontalLinker1;
+                    }
                 }
             }
             break;
@@ -111,8 +129,16 @@ node_t** stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
         else{ //to nie jest pierwsza ani ostatnia linijka
             for (int i = 1; i < rozmiar[0]-1; i++){
                 if (!(dobryZnak(buf[index][i]))) bladSkladni = 1;
+                if (buf[index][i] == 'X') horizontalLinker = NULL;
                 if(wyznaczRozgalezienia(buf,1,i,'W') != 0){
-                    punkty[indx++] = init_node(index,i);
+                    if (horizontalLinker == NULL){
+                    horizontalLinker = init_node(index,i);
+                    }
+                    else{
+                        horizontalLinker1 = init_node(index,i);
+                        link_nodes(horizontalLinker, horizontalLinker1);
+                        horizontalLinker = horizontalLinker1;
+                    }
                 }
             }
         }
@@ -123,5 +149,4 @@ node_t** stworzPunkty(char** buf,short int* rozmiar, FILE* plik){
         index++;
         wczytajKolejny(buf,rozmiar[0],plik);
     }
-    return punkty;
 }
