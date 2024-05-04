@@ -1,0 +1,1883 @@
+Rozmiar tego labiryntu to: 49 rzedow x 49 kolumn
+Distance of 1, 0 is 0
+In reality the value stored is: 0
+Temp dis is 1 VS distance of 1, 1 is 10000
+Distance of 1, 1 is 1
+In reality the value stored is: 1
+Temp dis is 5 VS distance of 5, 1 is 10000
+Distance of 1, 1 is 1
+In reality the value stored is: 1
+Temp dis is 2 VS distance of 1, 0 is 0
+Distance of 1, 1 is 1
+In reality the value stored is: 1
+Temp dis is 3 VS distance of 1, 3 is 10000
+Distance of 5, 1 is 5
+In reality the value stored is: 5
+Temp dis is 9 VS distance of 1, 1 is 1
+Distance of 5, 1 is 5
+In reality the value stored is: 5
+Temp dis is 9 VS distance of 5, 5 is 10000
+Distance of 5, 5 is 9
+In reality the value stored is: 9
+Temp dis is 11 VS distance of 7, 5 is 10000
+Distance of 5, 5 is 9
+In reality the value stored is: 9
+Temp dis is 13 VS distance of 5, 1 is 5
+Distance of 7, 5 is 11
+In reality the value stored is: 11
+Temp dis is 13 VS distance of 5, 5 is 9
+Distance of 7, 5 is 11
+In reality the value stored is: 11
+Temp dis is 15 VS distance of 7, 1 is 10000
+Distance of 7, 1 is 15
+In reality the value stored is: 15
+Temp dis is 17 VS distance of 9, 1 is 10000
+Distance of 7, 1 is 15
+In reality the value stored is: 15
+Temp dis is 19 VS distance of 7, 5 is 11
+Distance of 9, 1 is 17
+In reality the value stored is: 17
+Temp dis is 19 VS distance of 7, 1 is 15
+Distance of 9, 1 is 17
+In reality the value stored is: 17
+Temp dis is 21 VS distance of 9, 5 is 10000
+Distance of 9, 5 is 21
+In reality the value stored is: 21
+Temp dis is 23 VS distance of 11, 5 is 10000
+Distance of 9, 5 is 21
+In reality the value stored is: 21
+Temp dis is 25 VS distance of 9, 1 is 17
+Distance of 11, 5 is 23
+In reality the value stored is: 23
+Temp dis is 25 VS distance of 9, 5 is 21
+Distance of 11, 5 is 23
+In reality the value stored is: 23
+Temp dis is 25 VS distance of 11, 3 is 10000
+Distance of 11, 3 is 25
+In reality the value stored is: 25
+Temp dis is 29 VS distance of 15, 3 is 10000
+Distance of 11, 3 is 25
+In reality the value stored is: 25
+Temp dis is 27 VS distance of 11, 5 is 23
+Distance of 15, 3 is 29
+In reality the value stored is: 29
+Temp dis is 33 VS distance of 11, 3 is 25
+Distance of 15, 3 is 29
+In reality the value stored is: 29
+Temp dis is 31 VS distance of 15, 1 is 10000
+Distance of 15, 1 is 31
+In reality the value stored is: 31
+Temp dis is 35 VS distance of 19, 1 is 10000
+Distance of 15, 1 is 31
+In reality the value stored is: 31
+Temp dis is 33 VS distance of 15, 3 is 29
+Distance of 19, 1 is 35
+In reality the value stored is: 35
+Temp dis is 39 VS distance of 15, 1 is 31
+Distance of 19, 1 is 35
+In reality the value stored is: 35
+Temp dis is 37 VS distance of 19, 3 is 10000
+Distance of 19, 3 is 37
+In reality the value stored is: 37
+Temp dis is 41 VS distance of 23, 3 is 10000
+Distance of 19, 3 is 37
+In reality the value stored is: 37
+Temp dis is 39 VS distance of 19, 1 is 35
+Distance of 23, 3 is 41
+In reality the value stored is: 41
+Temp dis is 45 VS distance of 19, 3 is 37
+Distance of 23, 3 is 41
+In reality the value stored is: 41
+Temp dis is 45 VS distance of 23, 7 is 10000
+Distance of 23, 7 is 45
+In reality the value stored is: 45
+Temp dis is 47 VS distance of 21, 7 is 10000
+Distance of 23, 7 is 45
+In reality the value stored is: 45
+Temp dis is 49 VS distance of 23, 3 is 41
+Distance of 21, 7 is 47
+In reality the value stored is: 47
+Temp dis is 49 VS distance of 23, 7 is 45
+Distance of 21, 7 is 47
+In reality the value stored is: 47
+Temp dis is 49 VS distance of 21, 9 is 10000
+Distance of 21, 9 is 49
+In reality the value stored is: 49
+Temp dis is 51 VS distance of 19, 9 is 10000
+Distance of 21, 9 is 49
+In reality the value stored is: 49
+Temp dis is 53 VS distance of 25, 9 is 10000
+Distance of 21, 9 is 49
+In reality the value stored is: 49
+Temp dis is 51 VS distance of 21, 7 is 47
+Distance of 19, 9 is 51
+In reality the value stored is: 51
+Temp dis is 53 VS distance of 21, 9 is 49
+Distance of 19, 9 is 51
+In reality the value stored is: 51
+Temp dis is 53 VS distance of 19, 7 is 10000
+Distance of 19, 7 is 53
+In reality the value stored is: 53
+Temp dis is 55 VS distance of 17, 7 is 10000
+Distance of 19, 7 is 53
+In reality the value stored is: 53
+Temp dis is 55 VS distance of 19, 9 is 51
+Distance of 17, 7 is 55
+In reality the value stored is: 55
+Temp dis is 57 VS distance of 19, 7 is 53
+Distance of 17, 7 is 55
+In reality the value stored is: 55
+Temp dis is 57 VS distance of 17, 9 is 10000
+Distance of 17, 9 is 57
+In reality the value stored is: 57
+Temp dis is 61 VS distance of 13, 9 is 10000
+Distance of 17, 9 is 57
+In reality the value stored is: 57
+Temp dis is 59 VS distance of 17, 7 is 55
+Distance of 13, 9 is 61
+In reality the value stored is: 61
+Temp dis is 65 VS distance of 17, 9 is 57
+Distance of 13, 9 is 61
+In reality the value stored is: 61
+Temp dis is 63 VS distance of 13, 7 is 10000
+Distance of 13, 7 is 63
+In reality the value stored is: 63
+Temp dis is 65 VS distance of 11, 7 is 10000
+Distance of 13, 7 is 63
+In reality the value stored is: 63
+Temp dis is 65 VS distance of 13, 5 is 10000
+Distance of 13, 7 is 63
+In reality the value stored is: 63
+Temp dis is 65 VS distance of 13, 9 is 61
+Distance of 11, 7 is 65
+In reality the value stored is: 65
+Temp dis is 67 VS distance of 13, 7 is 63
+Distance of 11, 7 is 65
+In reality the value stored is: 65
+Temp dis is 67 VS distance of 11, 9 is 10000
+Distance of 11, 9 is 67
+In reality the value stored is: 67
+Temp dis is 71 VS distance of 7, 9 is 10000
+Distance of 11, 9 is 67
+In reality the value stored is: 67
+Temp dis is 69 VS distance of 11, 7 is 65
+Distance of 7, 9 is 71
+In reality the value stored is: 71
+Temp dis is 75 VS distance of 11, 9 is 67
+Distance of 7, 9 is 71
+In reality the value stored is: 71
+Temp dis is 75 VS distance of 7, 13 is 10000
+Distance of 7, 13 is 75
+In reality the value stored is: 75
+Temp dis is 79 VS distance of 3, 13 is 10000
+Distance of 7, 13 is 75
+In reality the value stored is: 75
+Temp dis is 77 VS distance of 9, 13 is 10000
+Distance of 7, 13 is 75
+In reality the value stored is: 75
+Temp dis is 79 VS distance of 7, 9 is 71
+Distance of 3, 13 is 79
+In reality the value stored is: 79
+Temp dis is 83 VS distance of 7, 13 is 75
+Distance of 3, 13 is 79
+In reality the value stored is: 79
+Temp dis is 85 VS distance of 3, 7 is 10000
+Distance of 3, 7 is 85
+In reality the value stored is: 85
+Temp dis is 87 VS distance of 5, 7 is 10000
+Distance of 3, 7 is 85
+In reality the value stored is: 85
+Temp dis is 91 VS distance of 3, 13 is 79
+Distance of 13, 5 is 65
+In reality the value stored is: 65
+Temp dis is 67 VS distance of 15, 5 is 10000
+Distance of 13, 5 is 65
+In reality the value stored is: 65
+Temp dis is 67 VS distance of 13, 7 is 63
+Distance of 15, 5 is 67
+In reality the value stored is: 67
+Temp dis is 69 VS distance of 13, 5 is 65
+Distance of 15, 5 is 67
+In reality the value stored is: 67
+Temp dis is 69 VS distance of 17, 5 is 10000
+Distance of 25, 9 is 53
+In reality the value stored is: 53
+Temp dis is 57 VS distance of 21, 9 is 49
+Distance of 25, 9 is 53
+In reality the value stored is: 53
+Temp dis is 59 VS distance of 25, 3 is 10000
+Distance of 25, 3 is 59
+In reality the value stored is: 59
+Temp dis is 61 VS distance of 27, 3 is 10000
+Distance of 25, 3 is 59
+In reality the value stored is: 59
+Temp dis is 65 VS distance of 25, 9 is 53
+Distance of 27, 3 is 61
+In reality the value stored is: 61
+Temp dis is 63 VS distance of 25, 3 is 59
+Distance of 27, 3 is 61
+In reality the value stored is: 61
+Temp dis is 63 VS distance of 27, 1 is 10000
+Distance of 27, 1 is 63
+In reality the value stored is: 63
+Temp dis is 67 VS distance of 31, 1 is 10000
+Distance of 27, 1 is 63
+In reality the value stored is: 63
+Temp dis is 65 VS distance of 27, 3 is 61
+Distance of 31, 1 is 67
+In reality the value stored is: 67
+Temp dis is 71 VS distance of 27, 1 is 63
+Distance of 31, 1 is 67
+In reality the value stored is: 67
+Temp dis is 69 VS distance of 31, 3 is 10000
+Distance of 31, 3 is 69
+In reality the value stored is: 69
+Temp dis is 71 VS distance of 33, 3 is 10000
+Distance of 31, 3 is 69
+In reality the value stored is: 69
+Temp dis is 71 VS distance of 31, 1 is 67
+Distance of 33, 3 is 71
+In reality the value stored is: 71
+Temp dis is 73 VS distance of 31, 3 is 69
+Distance of 33, 3 is 71
+In reality the value stored is: 71
+Temp dis is 73 VS distance of 33, 5 is 10000
+Distance of 33, 5 is 73
+In reality the value stored is: 73
+Temp dis is 75 VS distance of 31, 5 is 10000
+Distance of 33, 5 is 73
+In reality the value stored is: 73
+Temp dis is 75 VS distance of 33, 3 is 71
+Distance of 31, 5 is 75
+In reality the value stored is: 75
+Temp dis is 77 VS distance of 33, 5 is 73
+Distance of 31, 5 is 75
+In reality the value stored is: 75
+Temp dis is 77 VS distance of 31, 7 is 10000
+Distance of 31, 7 is 77
+In reality the value stored is: 77
+Temp dis is 79 VS distance of 29, 7 is 10000
+Distance of 31, 7 is 77
+In reality the value stored is: 77
+Temp dis is 79 VS distance of 31, 5 is 75
+Distance of 29, 7 is 79
+In reality the value stored is: 79
+Temp dis is 81 VS distance of 31, 7 is 77
+Distance of 29, 7 is 79
+In reality the value stored is: 79
+Temp dis is 81 VS distance of 29, 5 is 10000
+Distance of 29, 5 is 81
+In reality the value stored is: 81
+Temp dis is 83 VS distance of 27, 5 is 10000
+Distance of 29, 5 is 81
+In reality the value stored is: 81
+Temp dis is 83 VS distance of 29, 7 is 79
+Distance of 27, 5 is 83
+In reality the value stored is: 83
+Temp dis is 85 VS distance of 29, 5 is 81
+Distance of 27, 5 is 83
+In reality the value stored is: 83
+Temp dis is 87 VS distance of 27, 9 is 10000
+Distance of 27, 9 is 87
+In reality the value stored is: 87
+Temp dis is 91 VS distance of 31, 9 is 10000
+Distance of 27, 9 is 87
+In reality the value stored is: 87
+Temp dis is 91 VS distance of 27, 5 is 83
+Distance of 31, 9 is 91
+In reality the value stored is: 91
+Temp dis is 95 VS distance of 27, 9 is 87
+Distance of 31, 9 is 91
+In reality the value stored is: 91
+Temp dis is 93 VS distance of 31, 11 is 10000
+Distance of 31, 11 is 93
+In reality the value stored is: 93
+Temp dis is 95 VS distance of 33, 11 is 10000
+Distance of 31, 11 is 93
+In reality the value stored is: 93
+Temp dis is 95 VS distance of 31, 9 is 91
+Distance of 33, 11 is 95
+In reality the value stored is: 95
+Temp dis is 97 VS distance of 31, 11 is 93
+Distance of 33, 11 is 95
+In reality the value stored is: 95
+Temp dis is 97 VS distance of 33, 13 is 10000
+Distance of 33, 13 is 97
+In reality the value stored is: 97
+Temp dis is 99 VS distance of 35, 13 is 10000
+Distance of 33, 13 is 97
+In reality the value stored is: 97
+Temp dis is 99 VS distance of 33, 11 is 95
+Distance of 35, 13 is 99
+In reality the value stored is: 99
+Temp dis is 101 VS distance of 33, 13 is 97
+Distance of 35, 13 is 99
+In reality the value stored is: 99
+Temp dis is 101 VS distance of 35, 11 is 10000
+Distance of 35, 11 is 101
+In reality the value stored is: 101
+Temp dis is 103 VS distance of 37, 11 is 10000
+Distance of 35, 11 is 101
+In reality the value stored is: 101
+Temp dis is 103 VS distance of 35, 13 is 99
+Distance of 37, 11 is 103
+In reality the value stored is: 103
+Temp dis is 105 VS distance of 35, 11 is 101
+Distance of 37, 11 is 103
+In reality the value stored is: 103
+Temp dis is 105 VS distance of 37, 13 is 10000
+Distance of 37, 13 is 105
+In reality the value stored is: 105
+Temp dis is 107 VS distance of 39, 13 is 10000
+Distance of 37, 13 is 105
+In reality the value stored is: 105
+Temp dis is 107 VS distance of 37, 11 is 103
+Distance of 39, 13 is 107
+In reality the value stored is: 107
+Temp dis is 109 VS distance of 37, 13 is 105
+Distance of 39, 13 is 107
+In reality the value stored is: 107
+Temp dis is 109 VS distance of 39, 11 is 10000
+Distance of 39, 11 is 109
+In reality the value stored is: 109
+Temp dis is 111 VS distance of 41, 11 is 10000
+Distance of 39, 11 is 109
+In reality the value stored is: 109
+Temp dis is 111 VS distance of 39, 13 is 107
+Distance of 41, 11 is 111
+In reality the value stored is: 111
+Temp dis is 113 VS distance of 39, 11 is 109
+Distance of 41, 11 is 111
+In reality the value stored is: 111
+Temp dis is 113 VS distance of 41, 9 is 10000
+Distance of 41, 9 is 113
+In reality the value stored is: 113
+Temp dis is 115 VS distance of 43, 9 is 10000
+Distance of 41, 9 is 113
+In reality the value stored is: 113
+Temp dis is 115 VS distance of 41, 11 is 111
+Distance of 43, 9 is 115
+In reality the value stored is: 115
+Temp dis is 117 VS distance of 41, 9 is 113
+Distance of 43, 9 is 115
+In reality the value stored is: 115
+Temp dis is 117 VS distance of 43, 7 is 10000
+Distance of 43, 7 is 117
+In reality the value stored is: 117
+Temp dis is 119 VS distance of 41, 7 is 10000
+Distance of 43, 7 is 117
+In reality the value stored is: 117
+Temp dis is 119 VS distance of 43, 9 is 115
+Distance of 41, 7 is 119
+In reality the value stored is: 119
+Temp dis is 121 VS distance of 43, 7 is 117
+Distance of 41, 7 is 119
+In reality the value stored is: 119
+Temp dis is 121 VS distance of 41, 5 is 10000
+Distance of 41, 5 is 121
+In reality the value stored is: 121
+Temp dis is 127 VS distance of 47, 5 is 10000
+Distance of 41, 5 is 121
+In reality the value stored is: 121
+Temp dis is 123 VS distance of 41, 7 is 119
+Distance of 47, 5 is 127
+In reality the value stored is: 127
+Temp dis is 133 VS distance of 41, 5 is 121
+Distance of 47, 5 is 127
+In reality the value stored is: 127
+Temp dis is 131 VS distance of 47, 1 is 10000
+Distance of 47, 5 is 127
+In reality the value stored is: 127
+Temp dis is 131 VS distance of 47, 9 is 10000
+Distance of 47, 1 is 131
+In reality the value stored is: 131
+Temp dis is 135 VS distance of 43, 1 is 10000
+Distance of 47, 1 is 131
+In reality the value stored is: 131
+Temp dis is 135 VS distance of 47, 5 is 127
+Distance of 43, 1 is 135
+In reality the value stored is: 135
+Temp dis is 139 VS distance of 47, 1 is 131
+Distance of 43, 1 is 135
+In reality the value stored is: 135
+Temp dis is 137 VS distance of 43, 3 is 10000
+Distance of 43, 3 is 137
+In reality the value stored is: 137
+Temp dis is 141 VS distance of 39, 3 is 10000
+Distance of 43, 3 is 137
+In reality the value stored is: 137
+Temp dis is 139 VS distance of 43, 1 is 135
+Distance of 39, 3 is 141
+In reality the value stored is: 141
+Temp dis is 145 VS distance of 43, 3 is 137
+Distance of 39, 3 is 141
+In reality the value stored is: 141
+Temp dis is 143 VS distance of 39, 5 is 10000
+Distance of 39, 5 is 143
+In reality the value stored is: 143
+Temp dis is 147 VS distance of 35, 5 is 10000
+Distance of 39, 5 is 143
+In reality the value stored is: 143
+Temp dis is 145 VS distance of 39, 3 is 141
+Distance of 35, 5 is 147
+In reality the value stored is: 147
+Temp dis is 151 VS distance of 39, 5 is 143
+Distance of 35, 5 is 147
+In reality the value stored is: 147
+Temp dis is 149 VS distance of 35, 3 is 10000
+Distance of 35, 5 is 147
+In reality the value stored is: 147
+Temp dis is 151 VS distance of 35, 9 is 10000
+Distance of 35, 3 is 149
+In reality the value stored is: 149
+Temp dis is 151 VS distance of 37, 3 is 10000
+Distance of 35, 3 is 149
+In reality the value stored is: 149
+Temp dis is 151 VS distance of 35, 5 is 147
+Distance of 37, 3 is 151
+In reality the value stored is: 151
+Temp dis is 153 VS distance of 35, 3 is 149
+Distance of 37, 3 is 151
+In reality the value stored is: 151
+Temp dis is 153 VS distance of 37, 1 is 10000
+Distance of 11, 43 is 10000
+In reality the value stored is: 87
+Temp dis is 10002 VS distance of 13, 43 is 10000
+Distance of 11, 43 is 10000
+In reality the value stored is: 87
+Temp dis is 10004 VS distance of 11, 39 is 10000
+Distance of 35, 9 is 151
+In reality the value stored is: 151
+Temp dis is 153 VS distance of 33, 9 is 10000
+Distance of 35, 9 is 151
+In reality the value stored is: 151
+Temp dis is 155 VS distance of 39, 9 is 10000
+Distance of 35, 9 is 151
+In reality the value stored is: 151
+Temp dis is 155 VS distance of 35, 5 is 147
+Distance of 39, 9 is 155
+In reality the value stored is: 155
+Temp dis is 159 VS distance of 35, 9 is 151
+Distance of 39, 9 is 155
+In reality the value stored is: 155
+Temp dis is 157 VS distance of 39, 7 is 10000
+Distance of 13, 45 is 10000
+In reality the value stored is: 77
+Temp dis is 10004 VS distance of 17, 45 is 10000
+Distance of 13, 45 is 10000
+In reality the value stored is: 77
+Temp dis is 10002 VS distance of 13, 43 is 10000
+Distance of 9, 39 is 10000
+In reality the value stored is: 69
+Temp dis is 10002 VS distance of 11, 39 is 10000
+Distance of 9, 39 is 10000
+In reality the value stored is: 69
+Temp dis is 10002 VS distance of 9, 37 is 10000
+Distance of 47, 9 is 131
+In reality the value stored is: 131
+Temp dis is 133 VS distance of 45, 9 is 10000
+Distance of 47, 9 is 131
+In reality the value stored is: 131
+Temp dis is 135 VS distance of 47, 5 is 127
+Distance of 45, 9 is 133
+In reality the value stored is: 133
+Temp dis is 135 VS distance of 47, 9 is 131
+Distance of 45, 9 is 133
+In reality the value stored is: 133
+Temp dis is 137 VS distance of 45, 13 is 10000
+Distance of 45, 13 is 137
+In reality the value stored is: 137
+Temp dis is 139 VS distance of 47, 13 is 10000
+Distance of 45, 13 is 137
+In reality the value stored is: 137
+Temp dis is 141 VS distance of 45, 9 is 133
+Distance of 47, 13 is 139
+In reality the value stored is: 139
+Temp dis is 141 VS distance of 45, 13 is 137
+Distance of 47, 13 is 139
+In reality the value stored is: 139
+Temp dis is 147 VS distance of 47, 21 is 10000
+Distance of 47, 21 is 147
+In reality the value stored is: 147
+Temp dis is 149 VS distance of 45, 21 is 10000
+Distance of 47, 21 is 147
+In reality the value stored is: 147
+Temp dis is 155 VS distance of 47, 13 is 139
+Distance of 45, 21 is 149
+In reality the value stored is: 149
+Temp dis is 151 VS distance of 47, 21 is 147
+Distance of 45, 21 is 149
+In reality the value stored is: 149
+Temp dis is 153 VS distance of 45, 17 is 10000
+Distance of 45, 17 is 153
+In reality the value stored is: 153
+Temp dis is 155 VS distance of 43, 17 is 10000
+Distance of 45, 17 is 153
+In reality the value stored is: 153
+Temp dis is 157 VS distance of 45, 21 is 149
+Distance of 43, 17 is 155
+In reality the value stored is: 155
+Temp dis is 157 VS distance of 45, 17 is 153
+Distance of 43, 17 is 155
+In reality the value stored is: 155
+Temp dis is 157 VS distance of 43, 15 is 10000
+Distance of 43, 15 is 157
+In reality the value stored is: 157
+Temp dis is 159 VS distance of 43, 13 is 10000
+Distance of 43, 15 is 157
+In reality the value stored is: 157
+Temp dis is 159 VS distance of 43, 17 is 155
+Distance of 43, 13 is 159
+In reality the value stored is: 159
+Temp dis is 161 VS distance of 41, 13 is 10000
+Distance of 43, 13 is 159
+In reality the value stored is: 159
+Temp dis is 161 VS distance of 43, 15 is 157
+Distance of 41, 13 is 161
+In reality the value stored is: 161
+Temp dis is 163 VS distance of 43, 13 is 159
+Distance of 41, 13 is 161
+In reality the value stored is: 161
+Temp dis is 163 VS distance of 41, 15 is 10000
+Distance of 41, 15 is 163
+In reality the value stored is: 163
+Temp dis is 165 VS distance of 39, 15 is 10000
+Distance of 41, 15 is 163
+In reality the value stored is: 163
+Temp dis is 165 VS distance of 41, 13 is 161
+Distance of 39, 15 is 165
+In reality the value stored is: 165
+Temp dis is 167 VS distance of 41, 15 is 163
+Distance of 39, 15 is 165
+In reality the value stored is: 165
+Temp dis is 167 VS distance of 39, 17 is 10000
+Distance of 39, 17 is 167
+In reality the value stored is: 167
+Temp dis is 171 VS distance of 35, 17 is 10000
+Distance of 39, 17 is 167
+In reality the value stored is: 167
+Temp dis is 169 VS distance of 39, 15 is 165
+Distance of 35, 17 is 171
+In reality the value stored is: 171
+Temp dis is 175 VS distance of 39, 17 is 167
+Distance of 35, 17 is 171
+In reality the value stored is: 171
+Temp dis is 173 VS distance of 35, 15 is 10000
+Distance of 35, 17 is 171
+In reality the value stored is: 171
+Temp dis is 173 VS distance of 35, 19 is 10000
+Distance of 35, 19 is 173
+In reality the value stored is: 173
+Temp dis is 179 VS distance of 41, 19 is 10000
+Distance of 35, 19 is 173
+In reality the value stored is: 173
+Temp dis is 175 VS distance of 35, 17 is 171
+Distance of 41, 19 is 179
+In reality the value stored is: 179
+Temp dis is 185 VS distance of 35, 19 is 173
+Distance of 41, 19 is 179
+In reality the value stored is: 179
+Temp dis is 181 VS distance of 43, 19 is 10000
+Distance of 43, 19 is 181
+In reality the value stored is: 181
+Temp dis is 183 VS distance of 41, 19 is 179
+Distance of 43, 19 is 181
+In reality the value stored is: 181
+Temp dis is 185 VS distance of 43, 23 is 10000
+Distance of 43, 23 is 185
+In reality the value stored is: 185
+Temp dis is 187 VS distance of 41, 23 is 10000
+Distance of 43, 23 is 185
+In reality the value stored is: 185
+Temp dis is 189 VS distance of 43, 19 is 181
+Distance of 43, 23 is 185
+In reality the value stored is: 185
+Temp dis is 193 VS distance of 43, 31 is 10000
+Distance of 41, 23 is 187
+In reality the value stored is: 187
+Temp dis is 189 VS distance of 43, 23 is 185
+Distance of 41, 23 is 187
+In reality the value stored is: 187
+Temp dis is 189 VS distance of 41, 21 is 10000
+Distance of 43, 31 is 193
+In reality the value stored is: 193
+Temp dis is 197 VS distance of 47, 31 is 10000
+Distance of 43, 31 is 193
+In reality the value stored is: 193
+Temp dis is 201 VS distance of 43, 23 is 185
+Distance of 47, 31 is 197
+In reality the value stored is: 197
+Temp dis is 201 VS distance of 43, 31 is 193
+Distance of 47, 31 is 197
+In reality the value stored is: 197
+Temp dis is 199 VS distance of 47, 29 is 10000
+Distance of 47, 31 is 197
+In reality the value stored is: 197
+Temp dis is 199 VS distance of 47, 33 is 10000
+Distance of 47, 29 is 199
+In reality the value stored is: 199
+Temp dis is 201 VS distance of 45, 29 is 10000
+Distance of 47, 29 is 199
+In reality the value stored is: 199
+Temp dis is 201 VS distance of 47, 31 is 197
+Distance of 45, 29 is 201
+In reality the value stored is: 201
+Temp dis is 203 VS distance of 47, 29 is 199
+Distance of 45, 29 is 201
+In reality the value stored is: 201
+Temp dis is 207 VS distance of 45, 23 is 10000
+Distance of 45, 23 is 207
+In reality the value stored is: 207
+Temp dis is 209 VS distance of 47, 23 is 10000
+Distance of 45, 23 is 207
+In reality the value stored is: 207
+Temp dis is 213 VS distance of 45, 29 is 201
+Distance of 17, 25 is 10000
+In reality the value stored is: 153
+Temp dis is 10010 VS distance of 27, 25 is 10000
+Distance of 17, 25 is 10000
+In reality the value stored is: 153
+Temp dis is 10004 VS distance of 17, 29 is 10000
+Distance of 27, 25 is 10000
+In reality the value stored is: 157
+Temp dis is 10010 VS distance of 17, 25 is 10000
+Distance of 27, 25 is 10000
+In reality the value stored is: 157
+Temp dis is 10002 VS distance of 27, 27 is 10000
+Distance of 11, 11 is 10000
+In reality the value stored is: 173
+Temp dis is 10006 VS distance of 17, 11 is 10000
+Distance of 11, 11 is 10000
+In reality the value stored is: 173
+Temp dis is 10002 VS distance of 11, 13 is 10000
+Distance of 21, 15 is 10000
+In reality the value stored is: 189
+Temp dis is 10002 VS distance of 19, 15 is 10000
+Distance of 21, 15 is 10000
+In reality the value stored is: 189
+Temp dis is 10004 VS distance of 21, 11 is 10000
+Distance of 47, 33 is 199
+In reality the value stored is: 199
+Temp dis is 203 VS distance of 43, 33 is 10000
+Distance of 47, 33 is 199
+In reality the value stored is: 199
+Temp dis is 201 VS distance of 47, 31 is 197
+Distance of 43, 33 is 203
+In reality the value stored is: 203
+Temp dis is 207 VS distance of 47, 33 is 199
+Distance of 43, 33 is 203
+In reality the value stored is: 203
+Temp dis is 205 VS distance of 43, 35 is 10000
+Distance of 43, 35 is 205
+In reality the value stored is: 205
+Temp dis is 207 VS distance of 45, 35 is 10000
+Distance of 43, 35 is 205
+In reality the value stored is: 205
+Temp dis is 207 VS distance of 43, 33 is 203
+Distance of 45, 35 is 207
+In reality the value stored is: 207
+Temp dis is 209 VS distance of 43, 35 is 205
+Distance of 45, 35 is 207
+In reality the value stored is: 207
+Temp dis is 209 VS distance of 45, 37 is 10000
+Distance of 45, 37 is 209
+In reality the value stored is: 209
+Temp dis is 211 VS distance of 47, 37 is 10000
+Distance of 45, 37 is 209
+In reality the value stored is: 209
+Temp dis is 211 VS distance of 45, 35 is 207
+Distance of 15, 29 is 10000
+In reality the value stored is: 153
+Temp dis is 10002 VS distance of 17, 29 is 10000
+Distance of 15, 29 is 10000
+In reality the value stored is: 153
+Temp dis is 10004 VS distance of 15, 25 is 10000
+Distance of 31, 15 is 10000
+In reality the value stored is: 209
+Temp dis is 10002 VS distance of 33, 15 is 10000
+Distance of 31, 15 is 10000
+In reality the value stored is: 209
+Temp dis is 10002 VS distance of 31, 13 is 10000
+Distance of 21, 19 is 10000
+In reality the value stored is: 211
+Temp dis is 10006 VS distance of 27, 19 is 10000
+Distance of 21, 19 is 10000
+In reality the value stored is: 211
+Temp dis is 10002 VS distance of 21, 17 is 10000
+Distance of 21, 19 is 10000
+In reality the value stored is: 211
+Temp dis is 10006 VS distance of 27, 19 is 10000
+Distance of 21, 19 is 10000
+In reality the value stored is: 211
+Temp dis is 10002 VS distance of 21, 17 is 10000
+Distance of 35, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 31, 21 is 10000
+Distance of 35, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 23 is 10000
+Distance of 35, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 39, 23 is 10000
+Distance of 35, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 21 is 10000
+Distance of 39, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 35, 23 is 10000
+Distance of 39, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 25 is 10000
+Distance of 39, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 41, 25 is 10000
+Distance of 39, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 23 is 10000
+Distance of 41, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 25 is 10000
+Distance of 41, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 41, 33 is 10000
+Distance of 41, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 33 is 10000
+Distance of 41, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 41, 25 is 10000
+Distance of 39, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 41, 33 is 10000
+Distance of 39, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 39, 27 is 10000
+Distance of 39, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 35, 27 is 10000
+Distance of 39, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 39, 33 is 10000
+Distance of 35, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 39, 27 is 10000
+Distance of 35, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 25 is 10000
+Distance of 35, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 25 is 10000
+Distance of 35, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 27 is 10000
+Distance of 33, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 25 is 10000
+Distance of 33, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 33, 29 is 10000
+Distance of 33, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 37, 29 is 10000
+Distance of 33, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 33, 25 is 10000
+Distance of 37, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 33, 29 is 10000
+Distance of 37, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 31 is 10000
+Distance of 37, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 31 is 10000
+Distance of 37, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 29 is 10000
+Distance of 35, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 31 is 10000
+Distance of 35, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 35, 35 is 10000
+Distance of 35, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 35 is 10000
+Distance of 35, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 35, 31 is 10000
+Distance of 37, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 35 is 10000
+Distance of 37, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 41, 35 is 10000
+Distance of 41, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 37, 35 is 10000
+Distance of 41, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 41, 39 is 10000
+Distance of 41, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 43, 39 is 10000
+Distance of 41, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 41, 35 is 10000
+Distance of 43, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 41, 39 is 10000
+Distance of 43, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 43, 41 is 10000
+Distance of 43, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 45, 41 is 10000
+Distance of 43, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 43, 39 is 10000
+Distance of 45, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 43, 41 is 10000
+Distance of 45, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 45, 39 is 10000
+Distance of 45, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 47, 39 is 10000
+Distance of 45, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 45, 41 is 10000
+Distance of 47, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 45, 39 is 10000
+Distance of 47, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 47, 47 is 10000
+Distance of 47, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 45, 47 is 10000
+Distance of 47, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 47, 39 is 10000
+Distance of 47, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10001 VS distance of 47, 48 is 10000
+Distance of 45, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 47, 47 is 10000
+Distance of 45, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 45, 43 is 10000
+Distance of 45, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 41, 43 is 10000
+Distance of 45, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 45, 47 is 10000
+Distance of 41, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 45, 43 is 10000
+Distance of 41, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 41, 45 is 10000
+Distance of 41, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 45 is 10000
+Distance of 41, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 41, 43 is 10000
+Distance of 39, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 41, 45 is 10000
+Distance of 39, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 47 is 10000
+Distance of 39, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 47 is 10000
+Distance of 39, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 43, 47 is 10000
+Distance of 39, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 45 is 10000
+Distance of 37, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 47 is 10000
+Distance of 37, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 37, 43 is 10000
+Distance of 37, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 43 is 10000
+Distance of 37, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 37, 47 is 10000
+Distance of 35, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 43 is 10000
+Distance of 35, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 35, 37 is 10000
+Distance of 39, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 39 is 10000
+Distance of 39, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 41 is 10000
+Distance of 37, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 39, 39 is 10000
+Distance of 37, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 37 is 10000
+Distance of 37, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 37 is 10000
+Distance of 37, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 39 is 10000
+Distance of 35, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 29, 37 is 10000
+Distance of 35, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 37, 37 is 10000
+Distance of 35, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 35, 43 is 10000
+Distance of 29, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 35, 37 is 10000
+Distance of 29, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 39 is 10000
+Distance of 29, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 39 is 10000
+Distance of 29, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 37 is 10000
+Distance of 27, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 39 is 10000
+Distance of 27, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 27, 35 is 10000
+Distance of 27, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 23, 35 is 10000
+Distance of 27, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 27, 39 is 10000
+Distance of 23, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 27, 35 is 10000
+Distance of 23, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 23, 41 is 10000
+Distance of 23, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 41 is 10000
+Distance of 23, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 23, 35 is 10000
+Distance of 25, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 41 is 10000
+Distance of 25, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 25, 45 is 10000
+Distance of 25, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 45 is 10000
+Distance of 25, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 25, 41 is 10000
+Distance of 23, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 45 is 10000
+Distance of 23, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 47 is 10000
+Distance of 31, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 39 is 10000
+Distance of 31, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 41 is 10000
+Distance of 31, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 41 is 10000
+Distance of 31, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 39 is 10000
+Distance of 29, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 41 is 10000
+Distance of 29, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 41 is 10000
+Distance of 29, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 43 is 10000
+Distance of 29, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 33, 43 is 10000
+Distance of 29, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 41 is 10000
+Distance of 33, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 29, 43 is 10000
+Distance of 33, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 45 is 10000
+Distance of 33, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 35, 45 is 10000
+Distance of 33, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 43 is 10000
+Distance of 33, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 47 is 10000
+Distance of 33, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 47 is 10000
+Distance of 33, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 45 is 10000
+Distance of 31, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 47 is 10000
+Distance of 31, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 45 is 10000
+Distance of 31, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 27, 45 is 10000
+Distance of 31, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 47 is 10000
+Distance of 27, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 31, 45 is 10000
+Distance of 27, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 47 is 10000
+Distance of 27, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 23, 47 is 10000
+Distance of 27, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 45 is 10000
+Distance of 23, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10014 VS distance of 9, 47 is 10000
+Distance of 23, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 27, 47 is 10000
+Distance of 23, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 45 is 10000
+Distance of 9, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10014 VS distance of 23, 47 is 10000
+Distance of 9, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 9, 41 is 10000
+Distance of 9, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 5, 41 is 10000
+Distance of 9, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 9, 47 is 10000
+Distance of 5, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 9, 41 is 10000
+Distance of 5, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 39 is 10000
+Distance of 5, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 39 is 10000
+Distance of 5, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 41 is 10000
+Distance of 7, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 39 is 10000
+Distance of 7, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 37 is 10000
+Distance of 7, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 37 is 10000
+Distance of 7, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 39 is 10000
+Distance of 5, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 37 is 10000
+Distance of 5, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 35 is 10000
+Distance of 5, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 9, 35 is 10000
+Distance of 5, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 37 is 10000
+Distance of 9, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 5, 35 is 10000
+Distance of 9, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 9, 31 is 10000
+Distance of 9, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 31 is 10000
+Distance of 9, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 9, 35 is 10000
+Distance of 7, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 31 is 10000
+Distance of 7, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 7, 23 is 10000
+Distance of 7, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 23 is 10000
+Distance of 7, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 7, 31 is 10000
+Distance of 9, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 23 is 10000
+Distance of 9, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 9, 17 is 10000
+Distance of 9, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 17 is 10000
+Distance of 9, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 9, 23 is 10000
+Distance of 11, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 17 is 10000
+Distance of 11, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 15 is 10000
+Distance of 11, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 11, 23 is 10000
+Distance of 11, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 5, 15 is 10000
+Distance of 11, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 17 is 10000
+Distance of 5, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 11, 15 is 10000
+Distance of 5, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 5, 21 is 10000
+Distance of 5, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 21 is 10000
+Distance of 5, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 21 is 10000
+Distance of 5, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 5, 15 is 10000
+Distance of 3, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 21 is 10000
+Distance of 3, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 23 is 10000
+Distance of 3, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 23 is 10000
+Distance of 3, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 21 is 10000
+Distance of 5, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 23 is 10000
+Distance of 5, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 25 is 10000
+Distance of 5, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 1, 25 is 10000
+Distance of 5, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 23 is 10000
+Distance of 1, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 5, 25 is 10000
+Distance of 1, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 1, 19 is 10000
+Distance of 1, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 1, 33 is 10000
+Distance of 1, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 19 is 10000
+Distance of 1, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 1, 25 is 10000
+Distance of 3, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 19 is 10000
+Distance of 3, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 3, 15 is 10000
+Distance of 3, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 15 is 10000
+Distance of 3, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 3, 19 is 10000
+Distance of 1, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 15 is 10000
+Distance of 1, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10010 VS distance of 1, 5 is 10000
+Distance of 1, 5 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 5 is 10000
+Distance of 1, 5 is 10000
+In reality the value stored is: 10000
+Temp dis is 10010 VS distance of 1, 15 is 10000
+Distance of 3, 5 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 5 is 10000
+Distance of 3, 5 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 3 is 10000
+Distance of 3, 3 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 3 is 3
+Distance of 3, 3 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 5 is 10000
+Distance of 1, 3 is 3
+In reality the value stored is: 3
+Temp dis is 5 VS distance of 3, 3 is 10000
+Distance of 1, 3 is 3
+In reality the value stored is: 3
+Temp dis is 5 VS distance of 1, 1 is 1
+Distance of 25, 15 is 10000
+In reality the value stored is: 5
+Temp dis is 10002 VS distance of 27, 15 is 10000
+Distance of 25, 15 is 10000
+In reality the value stored is: 5
+Temp dis is 10002 VS distance of 25, 13 is 10000
+Distance of 29, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 25, 29 is 10000
+Distance of 29, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 29, 33 is 10000
+Distance of 25, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 29, 29 is 10000
+Distance of 25, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 27 is 10000
+Distance of 1, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 39 is 10000
+Distance of 1, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 41 is 10000
+Distance of 1, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 37 is 10000
+Distance of 1, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 35 is 10000
+Distance of 11, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 15, 23 is 10000
+Distance of 11, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 11, 17 is 10000
+Distance of 11, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 25 is 10000
+Distance of 17, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 13, 45 is 10000
+Distance of 17, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 43 is 10000
+Distance of 5, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 7, 43 is 10000
+Distance of 5, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 45 is 10000
+Distance of 19, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 15 is 10000
+Distance of 19, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 13 is 10000
+Distance of 21, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10012 VS distance of 21, 31 is 10000
+Distance of 21, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 45 is 10000
+Distance of 21, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 31 is 10000
+Distance of 21, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 29 is 10000
+Distance of 21, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10012 VS distance of 21, 43 is 10000
+Distance of 3, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 33 is 10000
+Distance of 3, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 33 is 10000
+Distance of 3, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 35 is 10000
+Distance of 11, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 13 is 10000
+Distance of 11, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 11 is 10000
+Distance of 1, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 33 is 10000
+Distance of 1, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 1, 25 is 10000
+Distance of 21, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 45 is 10000
+Distance of 21, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 43 is 10000
+Distance of 3, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 43 is 10000
+Distance of 3, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 41 is 10000
+Distance of 17, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 17 is 10000
+Distance of 17, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 15 is 10000
+Distance of 17, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 41 is 10000
+Distance of 17, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 17, 37 is 10000
+Distance of 19, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 41 is 10000
+Distance of 19, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 45 is 10000
+Distance of 3, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 41 is 10000
+Distance of 3, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 43 is 10000
+Distance of 23, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 29, 33 is 10000
+Distance of 23, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 31 is 10000
+Distance of 5, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 33 is 10000
+Distance of 5, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 5, 29 is 10000
+Distance of 31, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 31 is 10000
+Distance of 31, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 31, 23 is 10000
+Distance of 5, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 45 is 10000
+Distance of 5, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 43 is 10000
+Distance of 25, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 21 is 10000
+Distance of 25, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 23 is 10000
+Distance of 13, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 15, 41 is 10000
+Distance of 13, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 13, 37 is 10000
+Distance of 15, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 41 is 10000
+Distance of 15, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 15, 37 is 10000
+Distance of 1, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 35 is 10000
+Distance of 1, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 37 is 10000
+Distance of 13, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 9, 37 is 10000
+Distance of 13, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 13, 41 is 10000
+Distance of 3, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 35 is 10000
+Distance of 3, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 33 is 10000
+Distance of 15, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 37 is 10000
+Distance of 15, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 15, 41 is 10000
+Distance of 3, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 45 is 10000
+Distance of 3, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 47 is 10000
+Distance of 15, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 21 is 10000
+Distance of 15, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 15, 23 is 10000
+Distance of 5, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 29 is 10000
+Distance of 5, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 5, 33 is 10000
+Distance of 33, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 31 is 10000
+Distance of 33, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 33, 35 is 10000
+Distance of 1, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 43 is 10000
+Distance of 1, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 1, 47 is 10000
+Distance of 17, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 15, 37 is 10000
+Distance of 17, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 37 is 10000
+Distance of 17, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 17, 41 is 10000
+Distance of 7, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 43 is 10000
+Distance of 7, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 7, 47 is 10000
+Distance of 3, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 5, 29 is 10000
+Distance of 3, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 27 is 10000
+Distance of 1, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 41 is 10000
+Distance of 1, 41 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 39 is 10000
+Distance of 11, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 27 is 10000
+Distance of 11, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 29 is 10000
+Distance of 3, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 39 is 10000
+Distance of 3, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 37 is 10000
+Distance of 11, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 39 is 10000
+Distance of 11, 39 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 11, 43 is 10000
+Distance of 3, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 37 is 10000
+Distance of 3, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 39 is 10000
+Distance of 11, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 31 is 10000
+Distance of 11, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 11, 35 is 10000
+Distance of 31, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 35 is 10000
+Distance of 31, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 33 is 10000
+Distance of 13, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 43 is 10000
+Distance of 13, 43 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 45 is 10000
+Distance of 3, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 1, 47 is 10000
+Distance of 3, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 45 is 10000
+Distance of 17, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 15, 33 is 10000
+Distance of 17, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 31 is 10000
+Distance of 33, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 35 is 10000
+Distance of 33, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 33, 31 is 10000
+Distance of 31, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 33 is 10000
+Distance of 31, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 35 is 10000
+Distance of 1, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 3, 47 is 10000
+Distance of 1, 47 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 1, 43 is 10000
+Distance of 27, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 15 is 10000
+Distance of 27, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 15 is 10000
+Distance of 27, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 17 is 10000
+Distance of 25, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 13 is 10000
+Distance of 25, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 15 is 10000
+Distance of 31, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 27, 13 is 10000
+Distance of 31, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 15 is 10000
+Distance of 19, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 11, 35 is 10000
+Distance of 19, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 31 is 10000
+Distance of 21, 11 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 27, 11 is 10000
+Distance of 21, 11 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 21, 15 is 10000
+Distance of 19, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 13 is 10000
+Distance of 19, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 15 is 10000
+Distance of 17, 11 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 11, 11 is 10000
+Distance of 17, 11 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 13 is 10000
+Distance of 23, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 31 is 10000
+Distance of 23, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 33 is 10000
+Distance of 17, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 13, 15 is 10000
+Distance of 17, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 17 is 10000
+Distance of 19, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 17 is 10000
+Distance of 19, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 21 is 10000
+Distance of 21, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 21 is 10000
+Distance of 21, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 23 is 10000
+Distance of 19, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 45 is 10000
+Distance of 19, 45 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 41 is 10000
+Distance of 23, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 21 is 10000
+Distance of 23, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 23 is 10000
+Distance of 25, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 29, 23 is 10000
+Distance of 25, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 25, 21 is 10000
+Distance of 29, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 27 is 10000
+Distance of 29, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 29, 23 is 10000
+Distance of 29, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 23, 33 is 10000
+Distance of 29, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 33 is 10000
+Distance of 29, 33 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 29, 29 is 10000
+Distance of 15, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 11, 23 is 10000
+Distance of 15, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 15, 21 is 10000
+Distance of 17, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 15, 21 is 10000
+Distance of 17, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 19 is 10000
+Distance of 17, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 23 is 10000
+Distance of 13, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 17, 19 is 10000
+Distance of 13, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 17 is 10000
+Distance of 9, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 13, 37 is 10000
+Distance of 9, 37 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 39 is 10000
+Distance of 9, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 27 is 10000
+Distance of 9, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 25 is 10000
+Distance of 11, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 29 is 10000
+Distance of 11, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 27 is 10000
+Distance of 13, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 31 is 10000
+Distance of 13, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 29 is 10000
+Distance of 11, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10008 VS distance of 19, 35 is 10000
+Distance of 11, 35 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 11, 31 is 10000
+Distance of 17, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 31 is 10000
+Distance of 17, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 33 is 10000
+Distance of 19, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 25, 27 is 10000
+Distance of 19, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 31 is 10000
+Distance of 27, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 21, 17 is 10000
+Distance of 27, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 15 is 10000
+Distance of 21, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 27, 17 is 10000
+Distance of 21, 17 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 19 is 10000
+Distance of 27, 11 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 21, 11 is 10000
+Distance of 27, 11 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 13 is 10000
+Distance of 17, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 19, 13 is 10000
+Distance of 17, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 11 is 10000
+Distance of 13, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 17, 15 is 10000
+Distance of 13, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 13 is 10000
+Distance of 19, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 21 is 10000
+Distance of 19, 21 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 17 is 10000
+Distance of 23, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 23 is 10000
+Distance of 23, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 21 is 10000
+Distance of 29, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 25, 23 is 10000
+Distance of 29, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 29, 27 is 10000
+Distance of 17, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 15, 29 is 10000
+Distance of 17, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 17, 25 is 10000
+Distance of 17, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 13, 19 is 10000
+Distance of 17, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 21 is 10000
+Distance of 9, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 25 is 10000
+Distance of 9, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 27 is 10000
+Distance of 13, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 29 is 10000
+Distance of 13, 29 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 31 is 10000
+Distance of 19, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 17, 31 is 10000
+Distance of 19, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 27 is 10000
+Distance of 19, 31 is 10000
+In reality the value stored is: 10000
+Temp dis is 10004 VS distance of 19, 35 is 10000
+Distance of 27, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10006 VS distance of 21, 19 is 10000
+Distance of 27, 19 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 21 is 10000
+Distance of 33, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 31, 15 is 10000
+Distance of 33, 15 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 33, 17 is 10000
+Distance of 13, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 11, 13 is 10000
+Distance of 13, 13 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 13, 15 is 10000
+Distance of 21, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 23, 23 is 10000
+Distance of 21, 23 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 21, 21 is 10000
+Distance of 27, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 29, 27 is 10000
+Distance of 27, 27 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 27, 25 is 10000
+Distance of 11, 25 is 10000
+In reality the value stored is: 10000
+Temp dis is 10002 VS distance of 9, 25 is 10000
+Di
