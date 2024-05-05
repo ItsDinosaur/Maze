@@ -1,2 +1,2 @@
-Autorzy projektu:
+Najlepsi Autorzy projektu:
 Jan Koboska, Maciej Rutkowski

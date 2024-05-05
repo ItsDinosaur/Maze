@@ -1,5 +1,6 @@
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLaf;
 import components.MazePanel;
 import components.Test1;
 import events.MenuEventHandler;
