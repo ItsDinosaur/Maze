@@ -10,8 +10,11 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.nio.file.Paths;
 import javax.swing.JFileChooser;
+import javax.swing.UIManager;
 
 /**
  *
@@ -48,8 +51,29 @@ public class Menu extends javax.swing.JPanel {
         initMenuItems();
     }
     
+    void setupItem(MenuItem item){
+        item.addMouseListener(new MouseAdapter(){
+            /*@Override
+            public void mouseEntered(MouseEvent e){
+                item.paintBackround(new Color(200,200,200,40));
+            }
+            @Override
+            public void mouseExited(MouseEvent e){
+                item.paintBackround(UIManager.getColor("control"));
+            }*/
+            @Override
+            public void mouseClicked(MouseEvent e){
+                event.selected(item.getLabelText());
+                
+            }
+        });
+        OptionPanel.add(item);
+    }
+    
     void initMenuItems(){
-        OptionPanel.add(new MenuItem());
+        setupItem(new MenuItem("SOLVE"));
+        setupItem(new MenuItem("SET START"));
+        setupItem(new MenuItem("SET FINISH"));
         
     }
 

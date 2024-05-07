@@ -23,15 +23,7 @@ public class MazePanel extends javax.swing.JPanel{
     private ArrayList<String> maze;
     private int tileSize = 10;
 
-    public MazePanel() {
-        Maze mainMaze = new Maze();
-        maze = mainMaze.getMazeFromTXT();
-        rows = mainMaze.getXSize();
-        cols = mainMaze.getYSize();
-        setPreferredSize(new Dimension(rows*tileSize,cols*tileSize));
-        
-        initComponents();
-    }
+
     public MazePanel(String path) {
         Maze mainMaze = new Maze(path);
         maze = mainMaze.getMazeFromTXT();
@@ -73,7 +65,7 @@ public class MazePanel extends javax.swing.JPanel{
             }
             i++;
         }
-        System.out.println("X: "+i+", Y: "+j);
+        
     }
 
     @SuppressWarnings("unchecked")

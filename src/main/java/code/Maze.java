@@ -19,24 +19,12 @@ public class Maze {
     private int cols;
     private String fileName;
     
-    public Maze(){
-        maze = new ArrayList<>();
-        try {
-            File myFile = new File("OtherFiles/maze3.txt");
-            Scanner myReader = new Scanner(myFile);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                maze.add(data);
-                rows++;
-                cols = data.length();
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
+    private int[] startVertex;
+    private int[] endVertex;
+
     public Maze(String filePath){
+        startVertex = new int[2];
+        endVertex = new int[2];
         fileName = filePath;
         maze = new ArrayList<>();
         try {
@@ -55,6 +43,13 @@ public class Maze {
         }
     }
     
+    public int[] getStart(){
+        return startVertex;
+    }
+    public int[] getEnd(){
+        return endVertex;
+    }
+
     public ArrayList<String> getMazeFromTXT(){
         return maze;
     }

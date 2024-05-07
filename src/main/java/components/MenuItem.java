@@ -8,9 +8,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.UIManager;
 
 /**
  *
@@ -21,20 +18,18 @@ public class MenuItem extends javax.swing.JPanel {
     /**
      * Creates new form MenuItem
      */
-    public MenuItem() {
+
+    public MenuItem(String text) {
         initComponents();
         setOpaque(false);
-        MenuItem.this.addMouseListener(new MouseAdapter(){
-            @Override
-            public void mouseEntered(MouseEvent e){
-                jLabel1.setBackground(new Color(200,200,200,40));
-            }
-            @Override
-            public void mouseExited(MouseEvent e){
-                jLabel1.setBackground(new Color(200,200,200,0));
-            }
-        });
-        
+        jLabel1.setText(text);
+    }
+
+    public String getLabelText(){
+        return jLabel1.getText();
+    }
+    public void paintBackround(Color c){
+        jLabel1.setBackground(c);
     }
     
     @Override
@@ -58,6 +53,7 @@ public class MenuItem extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(218, 231, 242));
         setPreferredSize(new java.awt.Dimension(110, 45));
 
         jLabel1.setFont(new java.awt.Font("Andale Mono", 1, 24)); // NOI18N
