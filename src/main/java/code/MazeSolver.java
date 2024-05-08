@@ -1,10 +1,10 @@
 package code;
 import java.util.*;
 
-public class MazeSolver {
+public class MazeSolver implements Runnable {
     private char[][] maze;
     private Maze mazeFull;
-    private static int[][] kierunki = {{1,0},{0,1},{-1,0},{0,-1}};
+    private static final int[][] kierunki = {{1,0},{0,1},{-1,0},{0,-1}};
     private ArrayList<Punkt> rozwiazanie;
     private boolean[][] odwiedzone;
 
@@ -18,13 +18,11 @@ public class MazeSolver {
         }
 
         public boolean equals(Punkt p){
-            if (this.x == p.x && this.y == p.y) return true;
-            return false;
+            return (this.x == p.x && this.y == p.y);
         }
 
         public boolean equals(int x, int y){
-            if (this.x == x && this.y == y) return true;
-            return false;
+            return (this.x == x && this.y == y);
         }
 
         public String toString(){
@@ -64,8 +62,7 @@ public class MazeSolver {
     }
 
     private boolean czyToWyjscie(int x, int y){
-        if (Xwyjscia == x && Ywyjscia == y) return true; //get exit x & y
-        return false;
+        return (mazeFull.getEnd()[0] == x && mazeFull.getEnd()[1] == y);
     }
 
     private boolean czyIstnieje (int r, int c){
@@ -78,11 +75,16 @@ public class MazeSolver {
         return true;
     }
 
-    private boolean szukaj(int r, int c, List<Punkt> rozwiazanie, boolean[][] odwiedzone){
-        if(!czyIstnieje(r, c)) return false;
+    private boolean szukaj(int r, int c, ArrayList<Punkt> rozwiazanie, boolean[][] odwiedzone){
+        System.out.println("Rozwazam punkt " + r + " " + c);
+        if(!czyIstnieje(r, c)){
+            System.out.println("Punkt " + r + " " + c + "nie istnieje");
+            return false;
+        }
         if (czyToMur(r, c) || czyPrzeszukane(r, c)) return false;
         Punkt tmp = new Punkt(r, c);
         rozwiazanie.add(tmp);
+        System.out.println("Dodaje do rozwiazania punkt " + r + " " + c);
         odwiedzone[r][c] = true;
 
         if(czyToWyjscie(r, c)) return true;
@@ -92,19 +94,49 @@ public class MazeSolver {
             if (szukaj(pkt.x, pkt.y, rozwiazanie, odwiedzone)) return true;
         }
 
+        System.out.println("Usuwam punkt " + rozwiazanie.get(rozwiazanie.size()-1));
         rozwiazanie.remove(rozwiazanie.size() - 1);
         return false;
     }
 
-    public List<Punkt> rozwiazLabirynt(){
+    public ArrayList<Punkt> rozwiazLabirynt(){
+
+        odwiedzone = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
         rozwiazanie = new ArrayList<Punkt>();
+        przepiszNaChary(mazeFull);
+
+        //tymczasowe od tad
+        for (int i = 0; i < odwiedzone.length; i++){
+            for (int j = 0; j < odwiedzone[i].length; j++){
+                if(maze[i][j] == 'P'){
+                    mazeFull.setStart(i, j);
+                }
+                if(maze[i][j] == 'K'){
+                    mazeFull.setEnd(i, j);
+                }
+            }
+        }     
+        //tymczasowe do tad, bedzie mozna usunac gdy w klasa Maze bedzie sama znajdowala poczatek i koniec
+
         for (int i = 0; i < odwiedzone.length; i++){
             for (int j = 0; j < odwiedzone[i].length; j++){
                 odwiedzone[i][j] = false;
             }
         }
-        if (szukaj(Xwejscia,Ywejscia, rozwiazanie, odwiedzone)) return rozwiazanie;
+        if (szukaj(mazeFull.getStart()[0],mazeFull.getStart()[1], rozwiazanie, odwiedzone)) return rozwiazanie;
+        ArrayList<Punkt> puste = new ArrayList<Punkt>();
+        return puste;
+    }
 
-        return Collections.emptyList();
+    public void wypiszRozwiazanie(){
+        for (Punkt p : this.rozwiazanie){
+            System.out.println(p);
+        }
+    }
+
+    public void run(){
+        ArrayList<Punkt> rozw = new ArrayList<Punkt>();
+        rozw = this.rozwiazLabirynt();
+        this.wypiszRozwiazanie();
     }
 }

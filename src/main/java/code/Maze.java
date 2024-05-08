@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import code.MazeSolver.Punkt;
+
 /**
  *
  * @author maciek
@@ -41,8 +43,24 @@ public class Maze {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+
+        // dodalem do mojego testowania to co jest potrzebne do rozwiazania labiryntu, potem
+        // bedzie mozna podpiac pod jakis guzik i wrzucic 
+        MazeSolver mz = new MazeSolver(this);
+        Thread solver = new Thread(mz);
+        solver.start();
     }
     
+    public void setStart(int x, int y){
+        this.startVertex[0] = x;
+        this.startVertex[1] = y;
+    }
+
+    public void setEnd(int x, int y){
+        this.endVertex[0] = x;
+        this.endVertex[1] = y;
+    }
+
     public int[] getStart(){
         return startVertex;
     }
