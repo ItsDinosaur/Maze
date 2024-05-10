@@ -46,9 +46,7 @@ public class Maze {
 
         // dodalem do mojego testowania to co jest potrzebne do rozwiazania labiryntu, potem
         // bedzie mozna podpiac pod jakis guzik i wrzucic 
-        MazeSolver mz = new MazeSolver(this);
-        Thread solver = new Thread(mz);
-        solver.start();
+        
     }
     
     public void setStart(int x, int y){

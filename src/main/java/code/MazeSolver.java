@@ -134,9 +134,16 @@ public class MazeSolver implements Runnable {
         }
     }
 
+    public ArrayList<Punkt> getRozwiazanie(){
+        return this.rozwiazanie;
+    }
+
     public void run(){
-        ArrayList<Punkt> rozw = new ArrayList<Punkt>();
-        rozw = this.rozwiazLabirynt();
-        this.wypiszRozwiazanie();
+        try {
+            rozwiazLabirynt();
+            //this.wypiszRozwiazanie();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -5,42 +5,52 @@
 package components;
 
 import code.Maze;
+import code.MazeSolver;
+import code.MazeSolver.Punkt;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.Timer;
 
 /**
  *
  * @author maciek
  */
-public class MazePanel extends javax.swing.JPanel{
+public class MazePanel extends javax.swing.JPanel {
 
     private int rows;
     private int cols;
     private ArrayList<String> maze;
     private int tileSize = 10;
-
+    private Maze mainMaze;
+    int animationSpeed = 100;
 
     public MazePanel(String path) {
-        Maze mainMaze = new Maze(path);
+        mainMaze = new Maze(path);
         maze = mainMaze.getMazeFromTXT();
         rows = mainMaze.getXSize();
         cols = mainMaze.getYSize();
-        setPreferredSize(new Dimension(rows*tileSize,cols*tileSize));
-        System.out.println(getPreferredSize());
+
+        setPreferredSize(new Dimension(rows * tileSize, cols * tileSize));
+
         initComponents();
     }
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2.setRenderingHint(
+            RenderingHints.KEY_ANTIALIASING,
+            RenderingHints.VALUE_ANTIALIAS_ON
+        );
         int i = 0;
-        int j=0;
+        int j = 0;
         for (String s : maze) {
             char[] temp = s.toCharArray();
             for (j = 0; j < cols; j++) {
@@ -65,10 +75,40 @@ public class MazePanel extends javax.swing.JPanel{
             }
             i++;
         }
-        
+  
+    }
+    public void setAnimationDelay(int delay){
+        animationSpeed = delay;
     }
 
-    @SuppressWarnings("unchecked")
+    public void solveMaze(){
+        MazeSolver mz = new MazeSolver(mainMaze);
+        Thread solver = new Thread(mz);
+        solver.start();
+        try {
+            solver.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        ArrayList<Punkt> temp = mz.getRozwiazanie();
+        Timer timer = new Timer(1000/animationSpeed, new ActionListener() {
+            int index = 0;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            if (index < temp.size()) {
+                Punkt point = temp.get(index);
+                maze.set(point.x, maze.get(point.x).substring(0, point.y) + "#" + maze.get(point.x).substring(point.y + 1));
+                repaint();
+                index++;
+            } else {
+                ((Timer) e.getSource()).stop();
+            }
+            }
+        });
+        timer.start();
+    }
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -76,19 +116,7 @@ public class MazePanel extends javax.swing.JPanel{
         setMinimumSize(new java.awt.Dimension(2, 2));
         setName(""); // NOI18N
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
-        );
     }// </editor-fold>//GEN-END:initComponents
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,6 @@ package events;
  *
  * @author maciek
  */
-public interface MenuEventHandler {
-    public void selected(int optionID);
+public interface SliderHandler {
+    public void setValue(int value);
 }

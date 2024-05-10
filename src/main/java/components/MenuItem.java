@@ -18,6 +18,14 @@ public class MenuItem extends javax.swing.JPanel {
     /**
      * Creates new form MenuItem
      */
+    private int id;
+    
+    public void setId(int id){
+        this.id = id;
+    }
+    public int getId(){
+        return id;
+    }
 
     public MenuItem(String text) {
         initComponents();

@@ -1,9 +1,13 @@
 
+import code.Maze;
+import code.MazeSolver;
 import com.formdev.flatlaf.FlatDarkLaf;
 
 import components.MazePanel;
 import components.Test1;
 import events.MenuEventHandler;
+import events.SliderHandler;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -22,6 +26,9 @@ public class OurGUI extends javax.swing.JFrame {
     /**
      * Creates new form OurGUI
      */
+    
+    private MazePanel mazeHolder;
+    
     public OurGUI() {
         initComponents();
         setBackground(new Color(0, 0, 0, 0));
@@ -31,15 +38,28 @@ public class OurGUI extends javax.swing.JFrame {
         OurGUI.this.setLocation((szer-getWidth())/2, (wys-getHeight())/2);
         menu1.addMenuEvent(new MenuEventHandler(){
             @Override
-            public void selected(String option){
-                if(option.equals("NewFile")){
-                    String parsedPath = menu1.getFilePath();
-                    menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
-                    ReloadForm(new MazePanel(parsedPath));
+            public void selected(int option){
+                switch (option) {
+                    case -1:
+                        String parsedPath = menu1.getFilePath();
+                        menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
+                        mazeHolder = new MazePanel(parsedPath);
+                        ReloadForm(mazeHolder);
+                        break;
+                    case 0:
+                        jLabel1.setText("Rozwiazywanie za pomoca algorytmu dfs...");
+                        mazeHolder.solveMaze();
+                        break;
+                    default:
+                        // Handle other options here
+                        break;
                 }
-                else if(option.equals("SOLVE")){
-                    jLabel1.setText("Rozwiazywanie za pomoca algorytmu dfs");
-                }
+            }
+        });
+        menu1.addSliderEvent(new SliderHandler() {
+            @Override
+            public void setValue(int value){
+                mazeHolder.setAnimationDelay(value);
             }
         });
         
@@ -94,16 +114,16 @@ public class OurGUI extends javax.swing.JFrame {
         rootPanel1Layout.setHorizontalGroup(
             rootPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rootPanel1Layout.createSequentialGroup()
-                .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(rootPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rootPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(rootPanel1Layout.createSequentialGroup()
-                        .addGap(285, 285, 285)
+                        .addGap(205, 205, 205)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
