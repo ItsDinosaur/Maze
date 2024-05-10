@@ -10,13 +10,13 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.List;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
+import javax.swing.UIManager;
 
 /**
  *
@@ -31,6 +31,7 @@ public class Menu extends javax.swing.JPanel {
     private String pathToFile;
     private MenuEventHandler event;
     private SliderHandler sliderEvent;
+    private boolean isFileSelected = false;
     
     public void addMenuEvent(MenuEventHandler event){
         this.event = event;
@@ -59,17 +60,20 @@ public class Menu extends javax.swing.JPanel {
     
     void setupItem(MenuItem item){
         item.addMouseListener(new MouseAdapter(){
-            /*@Override
+            @Override
             public void mouseEntered(MouseEvent e){
-                item.paintBackround(new Color(200,200,200,40));
+                item.setOpaque(true);
+                System.out.println("Mouse entered");
             }
             @Override
             public void mouseExited(MouseEvent e){
-                item.paintBackround(UIManager.getColor("control"));
-            }*/
+                item.setOpaque(false);
+                System.out.println("Mouse exited");
+            }
             @Override
             public void mouseClicked(MouseEvent e){
-                event.selected(item.getId());
+                if(isFileSelected)
+                    event.selected(item.getId());
                 
             }
         });
@@ -143,6 +147,7 @@ public class Menu extends javax.swing.JPanel {
         jSlider1.setMaximum(1000);
         jSlider1.setMinimum(1);
         jSlider1.setValue(200);
+        jSlider1.setEnabled(false);
         jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSlider1StateChanged(evt);
@@ -211,6 +216,9 @@ public class Menu extends javax.swing.JPanel {
                 // set the label to the path of the selected file
                 pathToFile = (j.getSelectedFile().getPath());
                 event.selected(-1);
+                jSlider1.setEnabled(true);
+                isFileSelected = true;
+                jSlider1.setValue(200);
             }
             // if the user cancelled the operation
             else

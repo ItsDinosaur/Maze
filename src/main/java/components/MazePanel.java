@@ -15,7 +15,9 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.Timer;
 
 /**
@@ -27,7 +29,7 @@ public class MazePanel extends javax.swing.JPanel {
     private int rows;
     private int cols;
     private ArrayList<String> maze;
-    private int tileSize = 10;
+    private int tileSize = 7;
     private Maze mainMaze;
     int animationSpeed = 100;
 
@@ -41,14 +43,11 @@ public class MazePanel extends javax.swing.JPanel {
 
         initComponents();
     }
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(
-            RenderingHints.KEY_ANTIALIASING,
-            RenderingHints.VALUE_ANTIALIAS_ON
-        );
+    
+    private BufferedImage createImage() {
+        BufferedImage image = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2 = image.createGraphics();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         int i = 0;
         int j = 0;
         for (String s : maze) {
@@ -75,9 +74,22 @@ public class MazePanel extends javax.swing.JPanel {
             }
             i++;
         }
-  
+        g2.dispose();
+        return image;
     }
-    public void setAnimationDelay(int delay){
+    
+    private BufferedImage image;
+    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (image == null) {
+            image = createImage();
+        }
+        g.drawImage(image, 0, 0, null);
+    }
+    
+    public void setAnimationDelay(int delay) {
         animationSpeed = delay;
     }
 
@@ -98,7 +110,14 @@ public class MazePanel extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
             if (index < temp.size()) {
                 Punkt point = temp.get(index);
-                maze.set(point.x, maze.get(point.x).substring(0, point.y) + "#" + maze.get(point.x).substring(point.y + 1));
+                BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
+                Graphics2D g2 = updatedImage.createGraphics();
+                g2.drawImage(image, 0, 0, null);
+                g2.setPaint(Color.red);
+
+                g2.fillRect(point.y * tileSize, point.x * tileSize, tileSize, tileSize);
+                g2.dispose();
+                image = updatedImage;
                 repaint();
                 index++;
             } else {

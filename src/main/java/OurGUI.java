@@ -29,6 +29,7 @@ public class OurGUI extends javax.swing.JFrame {
     
     private MazePanel mazeHolder;
     
+    
     public OurGUI() {
         initComponents();
         setBackground(new Color(0, 0, 0, 0));
@@ -40,18 +41,21 @@ public class OurGUI extends javax.swing.JFrame {
             @Override
             public void selected(int option){
                 switch (option) {
+                    //File was chosen, reload scroll panel
                     case -1:
                         String parsedPath = menu1.getFilePath();
                         menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
                         mazeHolder = new MazePanel(parsedPath);
+                        addLogEvent("Wczytano plik: " + menu1.getFileNameFromPath(parsedPath));
                         ReloadForm(mazeHolder);
                         break;
+                    //Solve button was clicked, lock buttons, solve maze
                     case 0:
-                        jLabel1.setText("Rozwiazywanie za pomoca algorytmu dfs...");
+                        addLogEvent("Rozwiazywanie za pomoca algorytmu dfs...");
                         mazeHolder.solveMaze();
                         break;
                     default:
-                        // Handle other options here
+                        // Nothin heeeeeere
                         break;
                 }
             }
@@ -65,6 +69,9 @@ public class OurGUI extends javax.swing.JFrame {
         
         ReloadForm(new Test1());
         
+    }
+    public void addLogEvent(String event) {
+        LogHolder.setText("<html>"+ event  + "<br/>" + LogHolder.getText() + "</html>");
     }
 
     /**
@@ -80,7 +87,8 @@ public class OurGUI extends javax.swing.JFrame {
         ExitButton = new javax.swing.JButton();
         menu1 = new components.Menu();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jLabel1 = new javax.swing.JLabel();
+        LogHolderScrollPane = new javax.swing.JScrollPane();
+        LogHolder = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BestLookinMazeSolver");
@@ -106,8 +114,11 @@ public class OurGUI extends javax.swing.JFrame {
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
         jScrollPane1.getHorizontalScrollBar().setUnitIncrement(10);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("jLabel1");
+        LogHolderScrollPane.setViewportBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
+
+        LogHolder.setFont(new java.awt.Font("AnonymicePro Nerd Font", 0, 14)); // NOI18N
+        LogHolder.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LogHolderScrollPane.setViewportView(LogHolder);
 
         javax.swing.GroupLayout rootPanel1Layout = new javax.swing.GroupLayout(rootPanel1);
         rootPanel1.setLayout(rootPanel1Layout);
@@ -115,36 +126,36 @@ public class OurGUI extends javax.swing.JFrame {
             rootPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rootPanel1Layout.createSequentialGroup()
                 .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(rootPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rootPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(rootPanel1Layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(274, 274, 274)
+                        .addComponent(LogHolderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(244, Short.MAX_VALUE))))
         );
         rootPanel1Layout.setVerticalGroup(
             rootPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rootPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rootPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addGroup(rootPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-            .addComponent(menu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(LogHolderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+            .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(rootPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(rootPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +190,8 @@ public class OurGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ExitButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel LogHolder;
+    private javax.swing.JScrollPane LogHolderScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
     private components.Menu menu1;
     private components.RootPanel rootPanel1;

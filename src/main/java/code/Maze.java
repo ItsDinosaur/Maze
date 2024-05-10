@@ -43,9 +43,7 @@ public class Maze {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
-        // dodalem do mojego testowania to co jest potrzebne do rozwiazania labiryntu, potem
-        // bedzie mozna podpiac pod jakis guzik i wrzucic 
+           
         
     }
     
