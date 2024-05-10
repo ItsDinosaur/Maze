@@ -2,6 +2,8 @@
 import code.Maze;
 import code.MazeSolver;
 import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatIntelliJLaf;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 
 import components.MazePanel;
 import components.Test1;
@@ -93,10 +95,11 @@ public class OurGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BestLookinMazeSolver");
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1200, 600));
 
         rootPanel1.setPreferredSize(new java.awt.Dimension(1000, 700));
 
+        ExitButton.setBackground(new java.awt.Color(102, 0, 51));
+        ExitButton.setFont(new java.awt.Font("AnonymicePro Nerd Font", 1, 24)); // NOI18N
         ExitButton.setText("X");
         ExitButton.setFont(new Font("Comic Sans", Font.BOLD, 20));
         ExitButton.setBorderPainted(false);
@@ -148,7 +151,7 @@ public class OurGUI extends javax.swing.JFrame {
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(LogHolderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
-            .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -178,7 +181,9 @@ public class OurGUI extends javax.swing.JFrame {
     
     public static void main(String args[]) {
 
-        FlatDarkLaf.setup();
+        //FlatDarkLaf.setup();
+        //FlatIntelliJLaf.setup();
+        FlatMacDarkLaf.setup();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

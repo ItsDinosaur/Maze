@@ -7,6 +7,7 @@ package components;
 import events.MenuEventHandler;
 import events.SliderHandler;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,6 +18,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.UIManager;
+
+import net.miginfocom.swing.MigLayout;
 
 /**
  *
@@ -29,6 +32,7 @@ public class Menu extends javax.swing.JPanel {
      */
 
     private String pathToFile;
+    private final MigLayout layout;
     private MenuEventHandler event;
     private SliderHandler sliderEvent;
     private boolean isFileSelected = false;
@@ -54,6 +58,9 @@ public class Menu extends javax.swing.JPanel {
      
     public Menu() {
         initComponents();
+        OptionScrollPane.getViewport().setOpaque(false);
+        layout = new MigLayout("wrap, fillx, insets 0", "[fill]", "[]2[]");
+        OptionPanel.setLayout(layout);
         setOpaque(false);
         initMenuItems();
     }
@@ -63,12 +70,12 @@ public class Menu extends javax.swing.JPanel {
             @Override
             public void mouseEntered(MouseEvent e){
                 item.setOpaque(true);
-                System.out.println("Mouse entered");
+                item.setBackground(item.getBackground().darker());
             }
             @Override
             public void mouseExited(MouseEvent e){
                 item.setOpaque(false);
-                System.out.println("Mouse exited");
+                item.setBackground(item.getBackground().brighter());
             }
             @Override
             public void mouseClicked(MouseEvent e){
@@ -87,6 +94,7 @@ public class Menu extends javax.swing.JPanel {
         menuItems.add(new MenuItem("SOLVE"));
         menuItems.add(new MenuItem("SET START"));
         menuItems.add(new MenuItem("SET FINISH"));
+        
 
         for (int i = 0; i < menuItems.size(); i++) {
             MenuItem item = menuItems.get(i);
@@ -118,6 +126,7 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        OptionScrollPane = new javax.swing.JScrollPane();
         OptionPanel = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         SetFileButton = new javax.swing.JButton();
@@ -126,10 +135,32 @@ public class Menu extends javax.swing.JPanel {
         jSlider1 = new javax.swing.JSlider();
         jLabel1 = new javax.swing.JLabel();
 
-        OptionPanel.setOpaque(false);
-        OptionPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 10));
+        OptionScrollPane.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        OptionScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        OptionScrollPane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        OptionScrollPane.setViewportBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        OptionScrollPane.setMinimumSize(getPreferredSize());
+        OptionScrollPane.setOpaque(false);
 
-        SetFileButton.setText("File");
+        OptionPanel.setMinimumSize(new java.awt.Dimension(0, 0));
+        OptionPanel.setOpaque(false);
+        OptionPanel.setPreferredSize(new java.awt.Dimension(114, 42));
+
+        javax.swing.GroupLayout OptionPanelLayout = new javax.swing.GroupLayout(OptionPanel);
+        OptionPanel.setLayout(OptionPanelLayout);
+        OptionPanelLayout.setHorizontalGroup(
+            OptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 222, Short.MAX_VALUE)
+        );
+        OptionPanelLayout.setVerticalGroup(
+            OptionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 396, Short.MAX_VALUE)
+        );
+
+        OptionScrollPane.setViewportView(OptionPanel);
+
+        SetFileButton.setFont(new java.awt.Font("AnonymicePro Nerd Font", 3, 14)); // NOI18N
+        SetFileButton.setText("Choose file");
         SetFileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SetFileButtonActionPerformed(evt);
@@ -147,7 +178,6 @@ public class Menu extends javax.swing.JPanel {
         jSlider1.setMaximum(1000);
         jSlider1.setMinimum(1);
         jSlider1.setValue(200);
-        jSlider1.setEnabled(false);
         jSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSlider1StateChanged(evt);
@@ -163,19 +193,24 @@ public class Menu extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FileNameDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator2)
+                            .addComponent(jSeparator1)
+                            .addComponent(SetFileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(OptionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FileNameDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(SetFileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jSlider1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(OptionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -183,21 +218,21 @@ public class Menu extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(8, 8, 8)
                 .addComponent(SetFileButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(8, 8, 8)
                 .addComponent(FileNameDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(OptionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
+                .addComponent(OptionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
+                .addGap(8, 8, 8)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -236,6 +271,7 @@ public class Menu extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FileNameDisplay;
     private javax.swing.JPanel OptionPanel;
+    private javax.swing.JScrollPane OptionScrollPane;
     private javax.swing.JButton SetFileButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;

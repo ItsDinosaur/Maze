@@ -39,8 +39,8 @@ public class MenuItem extends javax.swing.JPanel {
         Graphics2D g2 = (Graphics2D) graphics;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);    
         
-        g2.setColor(new Color(200,200,200,40));
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 5, 5);
+        g2.setColor(new Color(0, 153, 153, 20));
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
         
         
     }
@@ -57,6 +57,7 @@ public class MenuItem extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(218, 231, 242));
+        setFont(new java.awt.Font("AnonymicePro Nerd Font", 0, 13)); // NOI18N
         setPreferredSize(new java.awt.Dimension(110, 45));
 
         jLabel1.setFont(new java.awt.Font("Andale Mono", 1, 24)); // NOI18N
