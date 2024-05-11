@@ -8,7 +8,7 @@ package events;
  *
  * @author maciek
  */
-public interface MenuEventHandler {
-    public void selected(int optionID);
-    
+public interface SettingsHandler {
+    public void settingsSelected(int settingID, boolean value);
+    public void settingsSetValue(int settingID, int value);
 }

@@ -1,18 +1,19 @@
 
-import code.Maze;
-import code.MazeSolver;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatIntelliJLaf;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 
+import code.Settings;
 import components.MazePanel;
+import components.SettingsCustomFrame;
 import components.Test1;
 import events.MenuEventHandler;
+import events.SettingsHandler;
 import events.SliderHandler;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JComponent;
 
 /*
@@ -30,9 +31,11 @@ public class OurGUI extends javax.swing.JFrame {
      */
     
     private MazePanel mazeHolder;
-    
+    SettingsCustomFrame settingsFrame;
+    Settings sets;
     
     public OurGUI() {
+        sets = new Settings();
         initComponents();
         setBackground(new Color(0, 0, 0, 0));
         rootPanel1.initMoving(OurGUI.this);
@@ -47,7 +50,7 @@ public class OurGUI extends javax.swing.JFrame {
                     case -1:
                         String parsedPath = menu1.getFilePath();
                         menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
-                        mazeHolder = new MazePanel(parsedPath);
+                        mazeHolder = new MazePanel(parsedPath,sets);
                         addLogEvent("Wczytano plik: " + menu1.getFileNameFromPath(parsedPath));
                         ReloadForm(mazeHolder);
                         break;
@@ -55,6 +58,40 @@ public class OurGUI extends javax.swing.JFrame {
                     case 0:
                         addLogEvent("Rozwiazywanie za pomoca algorytmu dfs...");
                         mazeHolder.solveMaze();
+                        break;
+                    //Settings button was clicked, open settings
+                    case -10:
+                        settingsFrame = new SettingsCustomFrame(sets);
+                        settingsFrame.setVisible(true);
+                        settingsFrame.setAlwaysOnTop(true);
+                        settingsFrame.addSettingEvent(new SettingsHandler(){
+                            @Override
+                            public void settingsSelected(int settingID, boolean value){
+                                switch(settingID){
+                                    case 0:
+                                        OurGUI.this.addLogEvent("Zmieniono ustawienie animacji na " + (value ? "wyłącz" : "wlącz"));
+                                        sets.setDoAnimation(!value);
+                                        mazeHolder.updateSettings(sets);
+                                        break;
+                                    default:
+                                        // Nothin heeeeeere
+                                        break;
+                                }   
+                            }
+                            @Override
+                            public void settingsSetValue(int settingID, int value){
+                                switch(settingID){
+                                    case 0:
+                                        OurGUI.this.addLogEvent("Zmieniono rozmiar kafelka na " + value);
+                                        sets.setTileSize(value);
+                                        mazeHolder.updateSettings(sets);
+                                        break;
+                                    default:
+                                        // Nothin heeeeeere
+                                        break;
+                                }
+                            }
+                        });
                         break;
                     default:
                         // Nothin heeeeeere
@@ -162,15 +199,18 @@ public class OurGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(rootPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(rootPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        try {
+            settingsFrame.dispose();
+        } catch (Exception e) {
+            // Nothin heeeeeere
+        }
         System.exit(0);
     }//GEN-LAST:event_ExitButtonActionPerformed
     

@@ -29,6 +29,8 @@ public class Maze {
         endVertex = new int[2];
         fileName = filePath;
         maze = new ArrayList<>();
+        cols = 0;
+        rows = 0;
         try {
             File myFile = new File(fileName);
             Scanner myReader = new Scanner(myFile);
