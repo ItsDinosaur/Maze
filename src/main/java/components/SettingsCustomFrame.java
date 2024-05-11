@@ -49,6 +49,7 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         TileSizeInput = new javax.swing.JTextField();
         TileSizeLabel = new javax.swing.JLabel();
+        ApplyButton = new javax.swing.JButton();
 
         jCheckBox1.setFont(new java.awt.Font("AnonymicePro Nerd Font", 0, 18)); // NOI18N
         jCheckBox1.setText("Turn off animation");
@@ -74,14 +75,19 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
         TileSizeLabel.setFont(new java.awt.Font("AnonymicePro Nerd Font", 0, 18)); // NOI18N
         TileSizeLabel.setText("Set Tile Size <1 ; 30>");
 
+        ApplyButton.setFont(new java.awt.Font("AnonymicePro Nerd Font", 1, 18)); // NOI18N
+        ApplyButton.setForeground(javax.swing.UIManager.getDefaults().getColor("Actions.Yellow"));
+        ApplyButton.setText("Apply");
+        ApplyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApplyButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -91,6 +97,14 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TileSizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(ApplyButton))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +117,9 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(TileSizeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TileSizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addComponent(ApplyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -123,6 +139,19 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
             TileSizeInput.setText("7");
         }
     }//GEN-LAST:event_TileSizeInputActionPerformed
+
+    private void ApplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApplyButtonActionPerformed
+        try {
+            int size = Integer.parseInt(TileSizeInput.getText());
+            if(size < 1 || size > 30)
+                throw new NumberFormatException();
+            menuEvent.settingsSetValue(0, size);
+            menuEvent.settingsSelected(0, jCheckBox1.isSelected());
+            this.dispose();
+        } catch (NumberFormatException e) {
+            TileSizeInput.setText("7");
+        }
+    }//GEN-LAST:event_ApplyButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +190,7 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ApplyButton;
     private javax.swing.JTextField TileSizeInput;
     private javax.swing.JLabel TileSizeLabel;
     private javax.swing.JCheckBox jCheckBox1;

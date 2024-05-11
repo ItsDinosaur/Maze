@@ -33,6 +33,7 @@ public class OurGUI extends javax.swing.JFrame {
     private MazePanel mazeHolder;
     SettingsCustomFrame settingsFrame;
     Settings sets;
+    private boolean isSolving = false;
     
     public OurGUI() {
         sets = new Settings();
@@ -52,11 +53,13 @@ public class OurGUI extends javax.swing.JFrame {
                         menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
                         mazeHolder = new MazePanel(parsedPath,sets);
                         addLogEvent("Wczytano plik: " + menu1.getFileNameFromPath(parsedPath));
+                        isSolving = false;
                         ReloadForm(mazeHolder);
                         break;
                     //Solve button was clicked, lock buttons, solve maze
                     case 0:
                         addLogEvent("Rozwiazywanie za pomoca algorytmu dfs...");
+                        isSolving = true;
                         mazeHolder.solveMaze();
                         break;
                     //Settings button was clicked, open settings
@@ -72,6 +75,8 @@ public class OurGUI extends javax.swing.JFrame {
                                         OurGUI.this.addLogEvent("Zmieniono ustawienie animacji na " + (value ? "wyłącz" : "wlącz"));
                                         sets.setDoAnimation(!value);
                                         mazeHolder.updateSettings(sets);
+                                        if(isSolving)
+                                            mazeHolder.solveMaze();
                                         break;
                                     default:
                                         // Nothin heeeeeere
