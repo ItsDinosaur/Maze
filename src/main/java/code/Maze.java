@@ -22,6 +22,8 @@ public class Maze {
     private int[] startVertex;
     private int[] endVertex;
 
+    public char replacerChar = 'X';
+
     public Maze(String filePath){
         startVertex = new int[2];
         endVertex = new int[2];
@@ -43,16 +45,33 @@ public class Maze {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-           
-        
+      
     }
+
+    public void changeTile(int x, int y, char tile){
+        String row = maze.get(x);
+        char[] rowArray = row.toCharArray();
+        rowArray[y] = tile;
+        row = new String(rowArray);
+        maze.set(x, row);
+    }  
     
     public void setStart(int x, int y){
+        // Remove previous one
+        changeTile(startVertex[0], startVertex[1], replacerChar);
+
+        // Set up new one
+        changeTile(x, y, 'P');
         this.startVertex[0] = x;
         this.startVertex[1] = y;
     }
 
     public void setEnd(int x, int y){
+        // Remove previous one
+        changeTile(endVertex[0], endVertex[1], replacerChar);
+
+        // Set up new one
+        changeTile(x, y, 'K');
         this.endVertex[0] = x;
         this.endVertex[1] = y;
     }
@@ -72,6 +91,12 @@ public class Maze {
     }
     public int getYSize(){
         return cols;
+    }
+
+    public void printMaze(){
+        for(String s : maze){
+            System.out.println(s);
+        }
     }
 
 }

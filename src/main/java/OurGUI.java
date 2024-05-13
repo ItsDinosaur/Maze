@@ -58,9 +58,20 @@ public class OurGUI extends javax.swing.JFrame {
                         break;
                     //Solve button was clicked, lock buttons, solve maze
                     case 0:
-                        addLogEvent("Rozwiazywanie za pomoca algorytmu dfs...");
+                        addLogEvent("Rozwiazywanie labiryntu...");
                         isSolving = true;
                         mazeHolder.solveMaze();
+                        break;
+                    // Set Start button was clicked, set start
+                    case 1:
+                        break;
+                    // Set End button was clicked, set end
+                    case 2:
+                        break;
+                    //Export button was clicked, export maze
+                    case 3:
+                        addLogEvent("Eksportowanie labiryntu...");
+                        mazeHolder.exportMaze(menu1.getPathToExport());
                         break;
                     //Settings button was clicked, open settings
                     case -10:
