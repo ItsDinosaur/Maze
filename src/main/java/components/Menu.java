@@ -94,7 +94,7 @@ public class Menu extends javax.swing.JPanel {
         menuItems.add(new MenuItem("SOLVE"));
         menuItems.add(new MenuItem("SET START"));
         menuItems.add(new MenuItem("SET FINISH"));
-        
+        menuItems.add(new MenuItem("EXPORT TO PNG"));
 
         for (int i = 0; i < menuItems.size(); i++) {
             MenuItem item = menuItems.get(i);
@@ -255,6 +255,26 @@ public class Menu extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    public String getPathToExport(){
+        String dir = System.getProperty("user.dir");
+        
+        JFileChooser j = new JFileChooser(dir);
+ 
+            // invoke the showsOpenDialog function to show the save dialog
+            int r = j.showSaveDialog(null);
+ 
+            // if the user selects a file
+            if (r == JFileChooser.APPROVE_OPTION)
+ 
+            {
+                // set the label to the path of the selected file
+                return (j.getSelectedFile().getPath());
+            }
+            // if the user cancelled the operation
+            else
+                return null;
+    }
 
     private void SetFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetFileButtonActionPerformed
         String dir = System.getProperty("user.dir");
