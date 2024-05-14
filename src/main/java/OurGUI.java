@@ -4,7 +4,7 @@ import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import code.Settings;
 import components.MazePanel;
 import components.SettingsCustomFrame;
-import components.Test1;
+import components.WaitForFilePanel;
 import events.MenuEventHandler;
 import events.SettingsHandler;
 import events.SliderHandler;
@@ -12,8 +12,10 @@ import events.SliderHandler;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
 /*
@@ -29,12 +31,11 @@ public class OurGUI extends javax.swing.JFrame {
     /**
      * Creates new form OurGUI
      */
-    
     private MazePanel mazeHolder;
     SettingsCustomFrame settingsFrame;
     Settings sets;
     private boolean isSolving = false;
-    
+
     public OurGUI() {
         sets = new Settings();
         initComponents();
@@ -42,16 +43,16 @@ public class OurGUI extends javax.swing.JFrame {
         rootPanel1.initMoving(OurGUI.this);
         int szer = Toolkit.getDefaultToolkit().getScreenSize().width;
         int wys = Toolkit.getDefaultToolkit().getScreenSize().height;
-        OurGUI.this.setLocation((szer-getWidth())/2, (wys-getHeight())/2);
-        menu1.addMenuEvent(new MenuEventHandler(){
+        OurGUI.this.setLocation((szer - getWidth()) / 2, (wys - getHeight()) / 2);
+        menu1.addMenuEvent(new MenuEventHandler() {
             @Override
-            public void selected(int option){
+            public void selected(int option) {
                 switch (option) {
                     //File was chosen, reload scroll panel
                     case -1:
                         String parsedPath = menu1.getFilePath();
                         menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
-                        mazeHolder = new MazePanel(parsedPath,sets);
+                        mazeHolder = new MazePanel(parsedPath, sets);
                         addLogEvent("Wczytano plik: " + menu1.getFileNameFromPath(parsedPath));
                         isSolving = false;
                         ReloadForm(mazeHolder);
@@ -60,43 +61,56 @@ public class OurGUI extends javax.swing.JFrame {
                     case 0:
                         addLogEvent("Rozwiazywanie labiryntu...");
                         isSolving = true;
-                        mazeHolder.solveMaze();
+                        mazeHolder.showSolvedMaze();
                         break;
-                    // Set Start button was clicked, set start
+                    // Clear button was clicked, clear maze from solved
                     case 1:
+                        addLogEvent("Czyszczenie labiryntu...");
+                        mazeHolder.clearMaze();
                         break;
-                    // Set End button was clicked, set end
+                     // Set Start button was clicked, set start
                     case 2:
                         break;
-                    //Export button was clicked, export maze
+                    // Set End button was clicked, set end
                     case 3:
+                        break;
+                    // Export button was clicked, export maze
+                    case 4:
                         addLogEvent("Eksportowanie labiryntu...");
-                        mazeHolder.exportMaze(menu1.getPathToExport());
+                        try {
+                            File file = new File(menu1.getPathToExport());
+                            ImageIO.write(mazeHolder.getScaledImage(2048, 2048),"png", file);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         break;
                     //Settings button was clicked, open settings
                     case -10:
                         settingsFrame = new SettingsCustomFrame(sets);
                         settingsFrame.setVisible(true);
                         settingsFrame.setAlwaysOnTop(true);
-                        settingsFrame.addSettingEvent(new SettingsHandler(){
+                        settingsFrame.addSettingEvent(new SettingsHandler() {
                             @Override
-                            public void settingsSelected(int settingID, boolean value){
-                                switch(settingID){
+                            public void settingsSelected(int settingID, boolean value) {
+                                switch (settingID) {
                                     case 0:
                                         OurGUI.this.addLogEvent("Zmieniono ustawienie animacji na " + (value ? "wyłącz" : "wlącz"));
+                                        menu1.enableSlider(!value);
                                         sets.setDoAnimation(!value);
                                         mazeHolder.updateSettings(sets);
-                                        if(isSolving)
-                                            mazeHolder.solveMaze();
+                                        if (isSolving) {
+                                            mazeHolder.showSolvedMaze();
+                                        }
                                         break;
                                     default:
                                         // Nothin heeeeeere
                                         break;
-                                }   
+                                }
                             }
+
                             @Override
-                            public void settingsSetValue(int settingID, int value){
-                                switch(settingID){
+                            public void settingsSetValue(int settingID, int value) {
+                                switch (settingID) {
                                     case 0:
                                         OurGUI.this.addLogEvent("Zmieniono rozmiar kafelka na " + value);
                                         sets.setTileSize(value);
@@ -117,16 +131,17 @@ public class OurGUI extends javax.swing.JFrame {
         });
         menu1.addSliderEvent(new SliderHandler() {
             @Override
-            public void setValue(int value){
-                mazeHolder.setAnimationDelay(value);
+            public void setValue(int value) {
+                mazeHolder.setAnimationSpeed(value);
             }
         });
-        
-        ReloadForm(new Test1());
-        
+
+        ReloadForm(new WaitForFilePanel());
+
     }
+
     public void addLogEvent(String event) {
-        LogHolder.setText("<html>"+ event  + "<br/>" + LogHolder.getText() + "</html>");
+        LogHolder.setText("<html>" + event + "<br/>" + LogHolder.getText() + "</html>");
     }
 
     /**
@@ -229,12 +244,11 @@ public class OurGUI extends javax.swing.JFrame {
         }
         System.exit(0);
     }//GEN-LAST:event_ExitButtonActionPerformed
-    
-    
-    public void ReloadForm(JComponent comp){
+
+    public void ReloadForm(JComponent comp) {
         jScrollPane1.setViewportView(comp);
     }
-    
+
     public static void main(String args[]) {
 
         //FlatDarkLaf.setup();

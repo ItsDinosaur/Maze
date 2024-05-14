@@ -44,6 +44,10 @@ public class Menu extends javax.swing.JPanel {
         this.sliderEvent = sliderEvent;
     }
     
+    public void enableSlider(boolean shouldWork){
+        jSlider1.setEnabled(shouldWork);
+    }
+    
     public String getFilePath(){
         return pathToFile;
     }
@@ -92,6 +96,7 @@ public class Menu extends javax.swing.JPanel {
     void initMenuItems(){
         
         menuItems.add(new MenuItem("SOLVE"));
+        menuItems.add(new MenuItem("CLEAR"));
         menuItems.add(new MenuItem("SET START"));
         menuItems.add(new MenuItem("SET FINISH"));
         menuItems.add(new MenuItem("EXPORT TO PNG"));
@@ -291,9 +296,7 @@ public class Menu extends javax.swing.JPanel {
                 // set the label to the path of the selected file
                 pathToFile = (j.getSelectedFile().getPath());
                 event.selected(-1);
-                jSlider1.setEnabled(true);
                 isFileSelected = true;
-                jSlider1.setValue(200);
             }
             // if the user cancelled the operation
             else

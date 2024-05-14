@@ -8,12 +8,12 @@ package components;
  *
  * @author maciek
  */
-public class Test1 extends javax.swing.JPanel {
+public class WaitForFilePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form Test1
      */
-    public Test1() {
+    public WaitForFilePanel() {
         initComponents();
         
     }
