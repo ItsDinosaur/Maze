@@ -32,19 +32,19 @@ public class Node {
         int dol = 0;
         int prawo = 0;
         int lewo = 0;
-        if (!MazeSolver.czyToMurT(t, i - 1, j)) {
+        if (!GraphMaker.czyToMurT(t, i - 1, j)) {
             wynik++;
             gora = 1;
         }
-        if (!MazeSolver.czyToMurT(t, i, j + 1)) {
+        if (!GraphMaker.czyToMurT(t, i, j + 1)) {
             wynik++;
             prawo = 1;
         }
-        if (!MazeSolver.czyToMurT(t, i + 1, j)) {
+        if (!GraphMaker.czyToMurT(t, i + 1, j)) {
             wynik++;
             dol = 1;
         }
-        if (!MazeSolver.czyToMurT(t, i, j - 1)) {
+        if (!GraphMaker.czyToMurT(t, i, j - 1)) {
             wynik++;
             lewo = 1;
         }

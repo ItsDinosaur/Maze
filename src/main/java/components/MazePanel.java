@@ -179,11 +179,12 @@ public class MazePanel extends javax.swing.JPanel {
         ArrayList<Punkt> temp = mz.getRozwiazanie();
         if (doAnimation) {
             Timer timer = new Timer(1000/animationSpeed, new ActionListener() {
-                int index = 0;
+                int index = 1;
     
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                if (index < temp.size()) {
+                if (index < temp.size()-1) {
+                    
                     Punkt point = temp.get(index);
                     BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
                     Graphics2D g2 = updatedImage.createGraphics();
