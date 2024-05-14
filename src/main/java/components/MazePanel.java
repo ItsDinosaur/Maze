@@ -38,38 +38,39 @@ public class MazePanel extends javax.swing.JPanel {
     private ArrayList<String> solvedMaze;
     public int tileSize;
     private Maze mainMaze;
-    int animationSpeed = 100;
+    private int animationSpeed = 100;
     public boolean doAnimation;
+    private BufferedImage image;
 
     public void updateSettings(Settings settings) {
         tileSize = settings.getTileSize();
         doAnimation = settings.isDoAnimation();
         setPreferredSize(new Dimension(cols * tileSize, rows * tileSize));
-        image = createImage(true);
+        reloadMazeOnGUI(solvedMaze);    
+    }
+    
+    public void reloadMazeOnGUI(ArrayList<String> mazeToDraw){
+        image = createImage(mazeToDraw);
         repaint();
     }
 
-    public void reloadMaze(Punkt startPunkt, Punkt endPunkt) {
+    public void remapStartEnd(Punkt startPunkt, Punkt endPunkt) {
         mainMaze.setStart(startPunkt.x, startPunkt.y);
         mainMaze.setEnd(endPunkt.x, endPunkt.y);
-        image = createImage(false);
-        repaint();
+        reloadMazeOnGUI(maze);
     }
 
-    public void exportMaze(String path) {
-        try{
-            File file = new File(path);
-            ImageIO.write(getScaledImage(image, 2048, 2048)
-                , "png", file);
-        }catch (Exception e){
-            e.printStackTrace();
+    public void clearMaze() {
+        solvedMaze = new ArrayList<>();
+        for (String s : maze) {
+            solvedMaze.add(s);
         }
-        
+        reloadMazeOnGUI(maze);
     }
 
-    private BufferedImage getScaledImage(BufferedImage src, int w, int h){
-        int original_width = src.getWidth();
-        int original_height = src.getHeight();
+    public BufferedImage getScaledImage(int w, int h){
+        int original_width = image.getWidth();
+        int original_height = image.getHeight();
         int bound_width = w;
         int bound_height = h;
         int new_width = original_width;
@@ -95,7 +96,7 @@ public class MazePanel extends javax.swing.JPanel {
         Graphics2D g2 = resizedImg.createGraphics();
         g2.setBackground(Color.WHITE);
         g2.clearRect(0,0,new_width, new_height);
-        g2.drawImage(src, 0, 0, new_width, new_height, null);
+        g2.drawImage(image, 0, 0, new_width, new_height, null);
         g2.dispose();
         return resizedImg;
     }
@@ -103,23 +104,27 @@ public class MazePanel extends javax.swing.JPanel {
     public MazePanel(String path, Settings settings) {
         tileSize = settings.getTileSize();
         doAnimation = settings.isDoAnimation();
-        solvedMaze = new ArrayList<>();
         mainMaze = new Maze(path);
         maze = mainMaze.getMazeFromTXT();
         rows = mainMaze.getXSize();
         cols = mainMaze.getYSize();
+        //Deep copy of solved maze
+        solvedMaze = new ArrayList<>();
+        for (String s : maze) {
+            solvedMaze.add(s);
+        }
 
         setPreferredSize(new Dimension(cols * tileSize, rows * tileSize));
         initComponents();
     }
     
-    private BufferedImage createImage(boolean update) {
+    private BufferedImage createImage(ArrayList<String> mazeToDraw) {
         BufferedImage image = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2 = image.createGraphics();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         int i = 0;
         int j = 0;
-        for (String s : (update ? (solvedMaze.isEmpty() ? maze : solvedMaze ) : maze)) {
+        for (String s : mazeToDraw) {
             char[] temp = s.toCharArray();
             for (j = 0; j < cols; j++) {
                 switch (temp[j]) {
@@ -147,40 +152,24 @@ public class MazePanel extends javax.swing.JPanel {
         return image;
     }
     
-    private BufferedImage image;
-    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (image == null) {
-            image = createImage(false);
+            image = createImage(maze);
         }
         g.drawImage(image, 0, 0, null);
     }
     
-    public void setAnimationDelay(int delay) {
-        animationSpeed = delay;
+    public void setAnimationSpeed(int speed) {
+        animationSpeed = speed;
     }
 
-    public void solveMaze(){
-        MazeSolver mz = new MazeSolver(mainMaze);
-        Thread solver = new Thread(mz);
-        solver.start();
-        try {
-            solver.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //Deep copy of solved maze
-        solvedMaze = new ArrayList<>();
-        for (String s : maze) {
-            solvedMaze.add(s);
-        }
-        ArrayList<Punkt> temp = mz.getRozwiazanie();
+    public void showSolvedMaze(){   
+        ArrayList<Punkt> temp = mainMaze.solveMyself();
         if (doAnimation) {
             Timer timer = new Timer(1000/animationSpeed, new ActionListener() {
                 int index = 1;
-    
                 @Override
                 public void actionPerformed(ActionEvent e) {
                 if (index < temp.size()-1) {

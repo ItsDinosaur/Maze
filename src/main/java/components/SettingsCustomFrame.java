@@ -141,7 +141,7 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_TileSizeInputActionPerformed
 
     private void ApplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApplyButtonActionPerformed
-        try {
+        /*try {
             int size = Integer.parseInt(TileSizeInput.getText());
             if(size < 1 || size > 30)
                 throw new NumberFormatException();
@@ -150,7 +150,11 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
             this.dispose();
         } catch (NumberFormatException e) {
             TileSizeInput.setText("7");
-        }
+        }*/
+        jCheckBox1ActionPerformed(evt);
+        TileSizeInputActionPerformed(evt);
+        
+        
     }//GEN-LAST:event_ApplyButtonActionPerformed
 
     /**

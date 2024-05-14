@@ -1,8 +1,9 @@
-/mnt/DinoServ/Maciuś/Maze/src/main/java/components/Test1.java
+/mnt/DinoServ/Maciuś/Maze/src/main/java/components/WaitForFilePanel.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/events/SliderHandler.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/SettingsCustomFrame.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/Menu.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/events/SettingsHandler.java
+/mnt/DinoServ/Maciuś/Maze/src/main/java/code/Node.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/OurGUI.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/code/MazeSolver.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/code/Settings.java
@@ -10,4 +11,5 @@
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/MenuItem.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/MazePanel.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/RootPanel.java
+/mnt/DinoServ/Maciuś/Maze/src/main/java/code/GraphMaker.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/code/Maze.java

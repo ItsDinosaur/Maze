@@ -16,7 +16,7 @@ public class Settings {
     public boolean isDoAnimation() {
         return doAnimation;
     }
-
+    
     public void setDoAnimation(boolean doAnimation) {
         this.doAnimation = doAnimation;
     }
