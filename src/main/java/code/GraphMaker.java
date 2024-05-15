@@ -101,7 +101,7 @@ public class GraphMaker implements Runnable {
         stos.push(poczatek);
         while (!stos.isEmpty()) {
             Node obecny = stos.pop();
-            System.out.println("Rozwazam punkt " + obecny.x + " " + obecny.y);
+            //System.out.println("Rozwazam punkt " + obecny.x + " " + obecny.y);
             odwiedzone[obecny.x][obecny.y] = true;
 
             for (int[] strona : kierunki) {
@@ -121,7 +121,7 @@ public class GraphMaker implements Runnable {
         while (graf.get(nod) != null) {
             nod = graf.get(nod);
             rozwiazanie.add(nod);
-            System.out.println("Dodaje do rozwiazania " + nod);
+            //System.out.println("Dodaje do rozwiazania " + nod);
         }
         Collections.reverse(rozwiazanie);
 
@@ -138,7 +138,7 @@ public class GraphMaker implements Runnable {
     public void run() {
         try {
             stworzGraf();
-            this.wypiszRozwiazanie();
+            //this.wypiszRozwiazanie();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -5,9 +5,7 @@
 package components;
 
 import code.Maze;
-import code.MazeSolver;
 import code.Settings;
-import code.MazeSolver.Punkt;
 import code.Node;
 
 import java.awt.Color;
@@ -55,7 +53,7 @@ public class MazePanel extends javax.swing.JPanel {
         repaint();
     }
 
-    public void remapStartEnd(Punkt startPunkt, Punkt endPunkt) {
+    public void remapStartEnd(Node startPunkt, Node endPunkt) {
         mainMaze.setStart(startPunkt.x, startPunkt.y);
         mainMaze.setEnd(endPunkt.x, endPunkt.y);
         reloadMazeOnGUI(maze);

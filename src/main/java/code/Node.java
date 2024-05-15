@@ -3,7 +3,6 @@ package code;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import code.MazeSolver;
 
 public class Node {
     public int x;
