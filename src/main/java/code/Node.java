@@ -1,6 +1,8 @@
 package code;
 
 import java.util.ArrayList;
+import java.util.Objects;
+
 import code.MazeSolver;
 
 public class Node {
@@ -12,16 +14,25 @@ public class Node {
         this.y = y;
     }
 
-    public boolean equals(Node p) {
-        return (this.x == p.x && this.y == p.y);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Node node = (Node) obj;
+        return x == node.x && y == node.y;
     }
 
     public boolean equals(int x, int y) {
         return (this.x == x && this.y == y);
     }
 
+    @Override
     public String toString() {
         return "(" + this.x + "," + this.y + ")";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 
     public static boolean czyToNode(char[][] t, int i, int j) {

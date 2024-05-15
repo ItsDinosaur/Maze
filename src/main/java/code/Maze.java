@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import code.Node;
 
 /**
  *
@@ -100,8 +101,8 @@ public class Maze {
         }
     }
     
-    public ArrayList<Punkt> solveMyself(){
-        MazeSolver mz = new MazeSolver(this);
+    public ArrayList<Node> solveMyself(){
+        GraphMaker mz = new GraphMaker(this);
         Thread solver = new Thread(mz);
         solver.start();
         try {

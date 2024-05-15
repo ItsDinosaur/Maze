@@ -8,6 +8,7 @@ import code.Maze;
 import code.MazeSolver;
 import code.Settings;
 import code.MazeSolver.Punkt;
+import code.Node;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -166,7 +167,7 @@ public class MazePanel extends javax.swing.JPanel {
     }
 
     public void showSolvedMaze(){   
-        ArrayList<Punkt> temp = mainMaze.solveMyself();
+        ArrayList<Node> temp = mainMaze.solveMyself();
         if (doAnimation) {
             Timer timer = new Timer(1000/animationSpeed, new ActionListener() {
                 int index = 1;
@@ -174,7 +175,7 @@ public class MazePanel extends javax.swing.JPanel {
                 public void actionPerformed(ActionEvent e) {
                 if (index < temp.size()-1) {
                     
-                    Punkt point = temp.get(index);
+                    Node point = temp.get(index);
                     BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
                     Graphics2D g2 = updatedImage.createGraphics();
                     g2.drawImage(image, 0, 0, null);
@@ -196,7 +197,7 @@ public class MazePanel extends javax.swing.JPanel {
             BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
             Graphics2D g2 = updatedImage.createGraphics();
             for (int i=1; i<temp.size()-1; i++) {
-                Punkt point = temp.get(i);
+                Node point = temp.get(i);
                 g2.drawImage(image, 0, 0, null);
                 g2.setPaint(Color.red);
                 solvedMaze.set(point.x, solvedMaze.get(point.x).substring(0, point.y) + "#" + solvedMaze.get(point.x).substring(point.y + 1));

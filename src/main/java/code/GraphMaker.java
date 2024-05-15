@@ -17,7 +17,7 @@ public class GraphMaker implements Runnable {
     public GraphMaker(Maze mazeFull) {
         this.mazeFull = mazeFull;
         przepiszNaChary(mazeFull);
-        // printMaze(maze);
+        printMaze(maze);
     }
 
     public void przepiszNaChary(Maze mazeFull) {
@@ -123,25 +123,17 @@ public class GraphMaker implements Runnable {
             rozwiazanie.add(nod);
             System.out.println("Dodaje do rozwiazania " + nod);
         }
-        //Collections.reverse(rozwiazanie);
+        Collections.reverse(rozwiazanie);
 
         return rozwiazanie;
     }
 
     public void wypiszRozwiazanie() {
         System.out.println("Wypisuje rozwiazanie:");
-        int i = 0;
         for (Node p : this.rozwiazanie) {
-            System.out.println(i++);
             System.out.println(p);
         }
     }
-
-    /*
-     * public ArrayList<Node> getRozwiazanie() {
-     * return this.rozwiazanie;
-     * }
-     */
 
     public void run() {
         try {
