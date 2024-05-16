@@ -2,7 +2,7 @@ package code;
 
 import java.util.*;
 
-public class GraphMaker implements Runnable {
+public class GraphHandler implements Runnable {
     private char[][] maze;
     private Maze mazeFull;
     private static final int[][] directions = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
@@ -13,7 +13,7 @@ public class GraphMaker implements Runnable {
     private Node endNode;
     private Stack<Node> stack;
 
-    public GraphMaker(Maze mazeFull) {
+    public GraphHandler(Maze mazeFull) {
         this.mazeFull = mazeFull;
         makeCharFromString(mazeFull);
     }
@@ -39,14 +39,6 @@ public class GraphMaker implements Runnable {
         return this.maze[r][c] == 'X';
     }
 
-    public static boolean isWall(char[][] t, int r, int c) {
-        try {
-            return t[r][c] == 'X';
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            return true;
-        }
-    }
-
     private boolean isVisited(int r, int c) {
         return visited[r][c];
     }
@@ -61,8 +53,6 @@ public class GraphMaker implements Runnable {
     }
 
     public ArrayList<Node> makeGraph() {
-
-        visited = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
         solution = new ArrayList<Node>();
         makeCharFromString(mazeFull);
         graph = new HashMap<Node, Node>(); // <dziecko,rodzic>, dziecko jest kluczem
@@ -83,6 +73,7 @@ public class GraphMaker implements Runnable {
         // tymczasowe do tad, bedzie mozna usunac gdy w klasa Maze bedzie sama
         // znajdowala startNode i endNode
 
+        visited = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
         for (int i = 0; i < visited.length; i++) {
             for (int j = 0; j < visited[i].length; j++) {
                 visited[i][j] = false;
@@ -93,15 +84,15 @@ public class GraphMaker implements Runnable {
         stack = new Stack<Node>();
         stack.push(startNode);
         while (!stack.isEmpty()) {
-            Node obecny = stack.pop();
-            visited[obecny.getX()][obecny.getY()] = true;
+            Node current = stack.pop();
+            visited[current.getX()][current.getY()] = true;
 
-            for (int[] strona : directions) {
-                Node nodzik = newPosition(obecny.getX(), obecny.getY(), strona[0], strona[1]);
+            for (int[] direction : directions) {
+                Node nodzik = newPosition(current.getX(), current.getY(), direction[0], direction[1]);
                 if (exists(nodzik.getX(), nodzik.getY())) {
                     if (!isWall(nodzik.getX(), nodzik.getY()) && !isVisited(nodzik.getX(), nodzik.getY())) {
                         stack.push(nodzik);
-                        graph.put(nodzik, obecny);
+                        graph.put(nodzik, current);
                     }
                 }
             }
@@ -129,7 +120,6 @@ public class GraphMaker implements Runnable {
     public void run() {
         try {
             makeGraph();
-            //this.wypiszsolution();
         } catch (Exception e) {
             e.printStackTrace();
         }
