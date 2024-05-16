@@ -54,8 +54,8 @@ public class MazePanel extends javax.swing.JPanel {
     }
 
     public void remapStartEnd(Node startPunkt, Node endPunkt) {
-        mainMaze.setStart(startPunkt.x, startPunkt.y);
-        mainMaze.setEnd(endPunkt.x, endPunkt.y);
+        mainMaze.setStart(startPunkt.getX(), startPunkt.getY());
+        mainMaze.setEnd(endPunkt.getX(), endPunkt.getY());
         reloadMazeOnGUI(maze);
     }
 
@@ -179,9 +179,9 @@ public class MazePanel extends javax.swing.JPanel {
                     g2.drawImage(image, 0, 0, null);
                     g2.setPaint(Color.red);
     
-                    g2.fillRect(point.y * tileSize, point.x * tileSize, tileSize, tileSize);
+                    g2.fillRect(point.getY() * tileSize, point.getX() * tileSize, tileSize, tileSize);
                     g2.dispose();
-                    solvedMaze.set(point.x, solvedMaze.get(point.x).substring(0, point.y) + "#" + solvedMaze.get(point.x).substring(point.y + 1));
+                    solvedMaze.set(point.getX(), solvedMaze.get(point.getX()).substring(0, point.getY()) + "#" + solvedMaze.get(point.getX()).substring(point.getY() + 1));
                     image = updatedImage;
                     repaint();
                     index++;
@@ -198,9 +198,9 @@ public class MazePanel extends javax.swing.JPanel {
                 Node point = temp.get(i);
                 g2.drawImage(image, 0, 0, null);
                 g2.setPaint(Color.red);
-                solvedMaze.set(point.x, solvedMaze.get(point.x).substring(0, point.y) + "#" + solvedMaze.get(point.x).substring(point.y + 1));
+                solvedMaze.set(point.getX(), solvedMaze.get(point.getX()).substring(0, point.getY()) + "#" + solvedMaze.get(point.getX()).substring(point.getY() + 1));
 
-                g2.fillRect(point.y * tileSize, point.x * tileSize, tileSize, tileSize);
+                g2.fillRect(point.getY() * tileSize, point.getX() * tileSize, tileSize, tileSize);
                 image = updatedImage;
             }   
             g2.dispose();

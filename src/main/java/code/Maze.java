@@ -109,7 +109,7 @@ public class Maze {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return mz.getRozwiazanie();
+        return mz.getSolution();
     }
 
 }

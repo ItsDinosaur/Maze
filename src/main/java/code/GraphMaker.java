@@ -1,26 +1,24 @@
 package code;
 
 import java.util.*;
-import code.Node;
 
 public class GraphMaker implements Runnable {
     private char[][] maze;
     private Maze mazeFull;
-    private static final int[][] kierunki = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
-    private ArrayList<Node> rozwiazanie;
-    private boolean[][] odwiedzone;
-    private HashMap<Node, Node> graf;
-    private Node poczatek;
-    private Node koniec;
-    private Stack<Node> stos;
+    private static final int[][] directions = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
+    private ArrayList<Node> solution;
+    private boolean[][] visited;
+    private HashMap<Node, Node> graph;
+    private Node startNode;
+    private Node endNode;
+    private Stack<Node> stack;
 
     public GraphMaker(Maze mazeFull) {
         this.mazeFull = mazeFull;
-        przepiszNaChary(mazeFull);
-        printMaze(maze);
+        makeCharFromString(mazeFull);
     }
 
-    public void przepiszNaChary(Maze mazeFull) {
+    public void makeCharFromString(Maze mazeFull) {
         maze = new char[mazeFull.getXSize()][mazeFull.getYSize()];
         for (int i = 0; i < mazeFull.getXSize(); i++) {
             maze[i] = mazeFull.getMazeFromTXT().get(i).toCharArray();
@@ -33,15 +31,15 @@ public class GraphMaker implements Runnable {
         }
     }
 
-    private Node nowaPozycja(int row, int col, int i, int j) {
+    private Node newPosition(int row, int col, int i, int j) {
         return new Node(row + i, col + j);
     }
 
-    private boolean czyToMur(int r, int c) {
+    private boolean isWall(int r, int c) {
         return this.maze[r][c] == 'X';
     }
 
-    public static boolean czyToMurT(char[][] t, int r, int c) {
+    public static boolean isWall(char[][] t, int r, int c) {
         try {
             return t[r][c] == 'X';
         } catch (ArrayIndexOutOfBoundsException ex) {
@@ -49,103 +47,95 @@ public class GraphMaker implements Runnable {
         }
     }
 
-    private boolean czyPrzeszukane(int r, int c) {
-        return odwiedzone[r][c];
+    private boolean isVisited(int r, int c) {
+        return visited[r][c];
     }
 
-    private boolean czyToWyjscie(int x, int y) {
-        return (mazeFull.getEnd()[0] == x && mazeFull.getEnd()[1] == y);
-    }
-
-    public boolean czyIstnieje(int r, int c) {
-        char dummy;
+    public boolean exists(int r, int c) {
         try {
-            dummy = maze[r][c];
+            char dummy = maze[r][c];
         } catch (ArrayIndexOutOfBoundsException ex) {
             return false;
         }
         return true;
     }
 
-    public ArrayList<Node> stworzGraf() {
+    public ArrayList<Node> makeGraph() {
 
-        odwiedzone = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
-        rozwiazanie = new ArrayList<Node>();
-        przepiszNaChary(mazeFull);
-        graf = new HashMap<Node, Node>(); // <dziecko,rodzic>, dziecko jest kluczem
+        visited = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
+        solution = new ArrayList<Node>();
+        makeCharFromString(mazeFull);
+        graph = new HashMap<Node, Node>(); // <dziecko,rodzic>, dziecko jest kluczem
 
         // tymczasowe od tad
-        for (int i = 0; i < odwiedzone.length; i++) {
-            for (int j = 0; j < odwiedzone[i].length; j++) {
+        for (int i = 0; i < visited.length; i++) {
+            for (int j = 0; j < visited[i].length; j++) {
                 if (maze[i][j] == 'P') {
                     mazeFull.setStart(i, j);
-                    poczatek = new Node(i, j);
+                    startNode = new Node(i, j);
                 }
                 if (maze[i][j] == 'K') {
                     mazeFull.setEnd(i, j);
-                    koniec = new Node(i, j);
+                    endNode = new Node(i, j);
                 }
             }
         }
         // tymczasowe do tad, bedzie mozna usunac gdy w klasa Maze bedzie sama
-        // znajdowala poczatek i koniec
+        // znajdowala startNode i endNode
 
-        for (int i = 0; i < odwiedzone.length; i++) {
-            for (int j = 0; j < odwiedzone[i].length; j++) {
-                odwiedzone[i][j] = false;
+        for (int i = 0; i < visited.length; i++) {
+            for (int j = 0; j < visited[i].length; j++) {
+                visited[i][j] = false;
             }
         }
-        odwiedzone[poczatek.x][poczatek.y] = true;
+        visited[startNode.getX()][startNode.getY()] = true;
 
-        stos = new Stack<Node>();
-        stos.push(poczatek);
-        while (!stos.isEmpty()) {
-            Node obecny = stos.pop();
-            //System.out.println("Rozwazam punkt " + obecny.x + " " + obecny.y);
-            odwiedzone[obecny.x][obecny.y] = true;
+        stack = new Stack<Node>();
+        stack.push(startNode);
+        while (!stack.isEmpty()) {
+            Node obecny = stack.pop();
+            visited[obecny.getX()][obecny.getY()] = true;
 
-            for (int[] strona : kierunki) {
-                Node nodzik = nowaPozycja(obecny.x, obecny.y, strona[0], strona[1]);
-                if (czyIstnieje(nodzik.x, nodzik.y)) {
-                    if (!czyToMur(nodzik.x, nodzik.y) && !czyPrzeszukane(nodzik.x, nodzik.y)) {
-                        stos.push(nodzik);
-                        graf.put(nodzik, obecny);
+            for (int[] strona : directions) {
+                Node nodzik = newPosition(obecny.getX(), obecny.getY(), strona[0], strona[1]);
+                if (exists(nodzik.getX(), nodzik.getY())) {
+                    if (!isWall(nodzik.getX(), nodzik.getY()) && !isVisited(nodzik.getX(), nodzik.getY())) {
+                        stack.push(nodzik);
+                        graph.put(nodzik, obecny);
                     }
                 }
             }
         }
 
         // wyznacz sciezke od konca do poczatku
-        Node nod = this.koniec;
-        rozwiazanie.add(nod);
-        while (graf.get(nod) != null) {
-            nod = graf.get(nod);
-            rozwiazanie.add(nod);
-            //System.out.println("Dodaje do rozwiazania " + nod);
+        Node nod = this.endNode;
+        solution.add(nod);
+        while (graph.get(nod) != null) {
+            nod = graph.get(nod);
+            solution.add(nod);
         }
-        Collections.reverse(rozwiazanie);
+        Collections.reverse(solution);
 
-        return rozwiazanie;
+        return solution;
     }
 
-    public void wypiszRozwiazanie() {
-        System.out.println("Wypisuje rozwiazanie:");
-        for (Node p : this.rozwiazanie) {
+    public void printSolution() {
+        System.out.println("Wypisuje solution:");
+        for (Node p : this.solution) {
             System.out.println(p);
         }
     }
 
     public void run() {
         try {
-            stworzGraf();
-            //this.wypiszRozwiazanie();
+            makeGraph();
+            //this.wypiszsolution();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    // tymczasowo to nie rozwiazanie
-    public ArrayList<Node> getRozwiazanie() {
-        return rozwiazanie;
+    public ArrayList<Node> getSolution() {
+        return solution;
     }
 }
