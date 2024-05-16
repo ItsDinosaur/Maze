@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 package code;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import code.Node;
 
-/**
- *
- * @author maciek
- */
 public class Maze {
 
     private ArrayList<String> maze;
@@ -101,7 +93,7 @@ public class Maze {
     }
     
     public ArrayList<Node> solveMyself(){
-        GraphMaker mz = new GraphMaker(this);
+        GraphHandler mz = new GraphHandler(this);
         Thread solver = new Thread(mz);
         solver.start();
         try {

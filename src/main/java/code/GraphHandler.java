@@ -53,6 +53,7 @@ public class GraphHandler implements Runnable {
     }
 
     public ArrayList<Node> makeGraph() {
+        visited = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
         solution = new ArrayList<Node>();
         makeCharFromString(mazeFull);
         graph = new HashMap<Node, Node>(); // <dziecko,rodzic>, dziecko jest kluczem
@@ -73,7 +74,6 @@ public class GraphHandler implements Runnable {
         // tymczasowe do tad, bedzie mozna usunac gdy w klasa Maze bedzie sama
         // znajdowala startNode i endNode
 
-        visited = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
         for (int i = 0; i < visited.length; i++) {
             for (int j = 0; j < visited[i].length; j++) {
                 visited[i][j] = false;
