@@ -11,7 +11,7 @@ public class GraphHandler implements Runnable {
     private HashMap<Node, Node> graph;
     private Node startNode;
     private Node endNode;
-    private Stack<Node> stack;
+    private Queue<Node> queue;
 
     public GraphHandler(Maze mazeFull) {
         this.mazeFull = mazeFull;
@@ -74,17 +74,17 @@ public class GraphHandler implements Runnable {
         }
         visited[startNode.getX()][startNode.getY()] = true;
 
-        stack = new Stack<Node>();
-        stack.push(startNode);
-        while (!stack.isEmpty()) {
-            Node current = stack.pop();
+        queue = new LinkedList<Node>();
+        queue.add(startNode);
+        while (!queue.isEmpty()) {
+            Node current = queue.remove();
             visited[current.getX()][current.getY()] = true;
 
             for (int[] direction : directions) {
                 Node nodzik = newPosition(current.getX(), current.getY(), direction[0], direction[1]);
                 if (exists(nodzik.getX(), nodzik.getY())) {
                     if (!isWall(nodzik.getX(), nodzik.getY()) && !isVisited(nodzik.getX(), nodzik.getY())) {
-                        stack.push(nodzik);
+                        queue.add(nodzik);
                         graph.put(nodzik, current);
                     }
                 }
