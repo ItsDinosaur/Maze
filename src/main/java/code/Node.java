@@ -35,10 +35,6 @@ public class Node {
         return x == node.x && y == node.y;
     }
 
-    public boolean equals(int x, int y) {
-        return (this.x == x && this.y == y);
-    }
-
     @Override
     public String toString() {
         return "(" + this.x + "," + this.y + ")";

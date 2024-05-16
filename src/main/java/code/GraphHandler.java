@@ -25,12 +25,6 @@ public class GraphHandler implements Runnable {
         }
     }
 
-    public void printMaze(char[][] maze) {
-        for (int i = 0; i < mazeFull.getXSize(); i++) {
-            System.out.println(maze[i]);
-        }
-    }
-
     private Node newPosition(int row, int col, int i, int j) {
         return new Node(row + i, col + j);
     }
@@ -52,9 +46,8 @@ public class GraphHandler implements Runnable {
         return true;
     }
 
-    public ArrayList<Node> makeGraph() {
+    private void makeGraph() {
         visited = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
-        solution = new ArrayList<Node>();
         makeCharFromString(mazeFull);
         graph = new HashMap<Node, Node>(); // <dziecko,rodzic>, dziecko jest kluczem
 
@@ -97,8 +90,10 @@ public class GraphHandler implements Runnable {
                 }
             }
         }
+    }
 
-        // wyznacz sciezke od konca do poczatku
+    private ArrayList<Node> solveGraph(){
+        solution = new ArrayList<Node>();
         Node nod = this.endNode;
         solution.add(nod);
         while (graph.get(nod) != null) {
@@ -110,16 +105,10 @@ public class GraphHandler implements Runnable {
         return solution;
     }
 
-    public void printSolution() {
-        System.out.println("Wypisuje solution:");
-        for (Node p : this.solution) {
-            System.out.println(p);
-        }
-    }
-
     public void run() {
         try {
             makeGraph();
+            solveGraph();
         } catch (Exception e) {
             e.printStackTrace();
         }
