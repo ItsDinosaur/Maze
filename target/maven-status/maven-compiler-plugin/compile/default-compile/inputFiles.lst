@@ -3,13 +3,15 @@
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/SettingsCustomFrame.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/Menu.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/events/SettingsHandler.java
+/mnt/DinoServ/Maciuś/Maze/src/main/java/ObserverSubject.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/code/Node.java
+/mnt/DinoServ/Maciuś/Maze/src/main/java/ConsoleObserver.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/OurGUI.java
-/mnt/DinoServ/Maciuś/Maze/src/main/java/code/MazeSolver.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/code/Settings.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/events/MenuEventHandler.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/MenuItem.java
+/mnt/DinoServ/Maciuś/Maze/src/main/java/MazeAppController.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/MazePanel.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/components/RootPanel.java
-/mnt/DinoServ/Maciuś/Maze/src/main/java/code/GraphMaker.java
+/mnt/DinoServ/Maciuś/Maze/src/main/java/code/GraphHandler.java
 /mnt/DinoServ/Maciuś/Maze/src/main/java/code/Maze.java

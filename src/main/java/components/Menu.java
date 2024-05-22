@@ -7,7 +7,6 @@ package components;
 import events.MenuEventHandler;
 import events.SliderHandler;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,7 +16,6 @@ import java.awt.event.MouseEvent;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
-import javax.swing.UIManager;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -50,6 +48,9 @@ public class Menu extends javax.swing.JPanel {
     
     public String getFilePath(){
         return pathToFile;
+    }
+    public void setFilePath(String s){
+        this.pathToFile = s;
     }
     
     public void DisplayPath(String path){

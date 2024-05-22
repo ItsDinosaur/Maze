@@ -16,6 +16,8 @@ public class Maze {
     private int[] endVertex;
 
     public char replacerChar = 'X';
+    
+    
 
     public Maze(String filePath){
         startVertex = new int[2];

@@ -10,13 +10,13 @@ import events.SettingsHandler;
 import events.SliderHandler;
 
 import java.awt.Color;
+import static java.awt.EventQueue.invokeAndWait;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.io.File;
-import java.util.HashSet;
-import java.util.Set;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -26,31 +26,71 @@ import javax.swing.JComponent;
  *
  * @author maciek
  */
-public class OurGUI extends javax.swing.JFrame {
+public class OurGUI extends JFrame implements ConsoleObserver {
 
     /**
      * Creates new form OurGUI
      */
     private MazePanel mazeHolder;
-    SettingsCustomFrame settingsFrame;
-    Settings sets;
+    private SettingsCustomFrame settingsFrame;
+    private static Settings sets;
     private boolean isSolving = false;
+    private String parsedPath;
 
-    public OurGUI() {
+    private static OurGUI instance;
+
+    public static OurGUI getInstance() throws Exception {
+        if (instance == null) {
+            FlatMacDarkLaf.setup();
+            invokeAndWait(new Runnable() {
+                public void run() {
+                    instance = new OurGUI();
+                    System.err.println("I created new GUI");
+                }
+            });
+        }
+        return instance;
+    }
+
+    @Override
+    public void state(String currentState) {
+        switch (currentState) {
+            case "showGUI":
+                setVisible(true);
+                break;
+            case "hideGUI":
+                setVisible(false);
+                break;
+            case "exit":
+                exitApp();
+            default:
+                // Well, totally nothing heeereeee
+        }
+    }
+    private void exitApp(){
+        try {
+            settingsFrame.dispose();
+        } catch (Exception e) {
+            // Nothin heeeeeere
+        }
+        System.exit(0);
+    }
+
+    private OurGUI() {
         sets = new Settings();
         initComponents();
         setBackground(new Color(0, 0, 0, 0));
         rootPanel1.initMoving(OurGUI.this);
         int szer = Toolkit.getDefaultToolkit().getScreenSize().width;
         int wys = Toolkit.getDefaultToolkit().getScreenSize().height;
-        OurGUI.this.setLocation((szer - getWidth()) / 2, (wys - getHeight()) / 2);
+        setLocation((szer - getWidth()) / 2, (wys - getHeight()) / 2);
         menu1.addMenuEvent(new MenuEventHandler() {
             @Override
             public void selected(int option) {
                 switch (option) {
                     //File was chosen, reload scroll panel
                     case -1:
-                        String parsedPath = menu1.getFilePath();
+                        parsedPath = menu1.getFilePath();
                         menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
                         mazeHolder = new MazePanel(parsedPath, sets);
                         addLogEvent("Wczytano plik: " + menu1.getFileNameFromPath(parsedPath));
@@ -68,7 +108,7 @@ public class OurGUI extends javax.swing.JFrame {
                         addLogEvent("Czyszczenie labiryntu...");
                         mazeHolder.clearMaze();
                         break;
-                     // Set Start button was clicked, set start
+                    // Set Start button was clicked, set start
                     case 2:
                         break;
                     // Set End button was clicked, set end
@@ -79,7 +119,7 @@ public class OurGUI extends javax.swing.JFrame {
                         addLogEvent("Eksportowanie labiryntu...");
                         try {
                             File file = new File(menu1.getPathToExport());
-                            ImageIO.write(mazeHolder.getScaledImage(2048, 2048),"png", file);
+                            ImageIO.write(mazeHolder.getScaledImage(2048, 2048), "png", file);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -237,30 +277,11 @@ public class OurGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
-        try {
-            settingsFrame.dispose();
-        } catch (Exception e) {
-            // Nothin heeeeeere
-        }
-        System.exit(0);
+        exitApp();
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     public void ReloadForm(JComponent comp) {
         jScrollPane1.setViewportView(comp);
-    }
-
-    public static void main(String args[]) {
-
-        //FlatDarkLaf.setup();
-        //FlatIntelliJLaf.setup();
-        FlatMacDarkLaf.setup();
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new OurGUI().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
