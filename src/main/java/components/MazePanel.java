@@ -30,7 +30,7 @@ import javax.swing.Timer;
  * @author maciek
  */
 public class MazePanel extends javax.swing.JPanel {
-
+    
     private int rows;
     private int cols;
     private ArrayList<String> maze;
@@ -40,25 +40,25 @@ public class MazePanel extends javax.swing.JPanel {
     private int animationSpeed = 100;
     public boolean doAnimation;
     private BufferedImage image;
-
+    
     public void updateSettings(Settings settings) {
         tileSize = settings.getTileSize();
         doAnimation = settings.isDoAnimation();
         setPreferredSize(new Dimension(cols * tileSize, rows * tileSize));
-        reloadMazeOnGUI(solvedMaze);    
+        reloadMazeOnGUI(solvedMaze);        
     }
     
-    public void reloadMazeOnGUI(ArrayList<String> mazeToDraw){
+    public void reloadMazeOnGUI(ArrayList<String> mazeToDraw) {
         image = createImage(mazeToDraw);
         repaint();
     }
-
+    
     public void remapStartEnd(Node startPunkt, Node endPunkt) {
         mainMaze.setStart(startPunkt.getX(), startPunkt.getY());
         mainMaze.setEnd(endPunkt.getX(), endPunkt.getY());
         reloadMazeOnGUI(maze);
     }
-
+    
     public void clearMaze() {
         solvedMaze = new ArrayList<>();
         for (String s : maze) {
@@ -66,15 +66,15 @@ public class MazePanel extends javax.swing.JPanel {
         }
         reloadMazeOnGUI(maze);
     }
-
-    public BufferedImage getScaledImage(int w, int h){
+    
+    public BufferedImage getScaledImage(int w, int h) {
         int original_width = image.getWidth();
         int original_height = image.getHeight();
         int bound_width = w;
         int bound_height = h;
         int new_width = original_width;
         int new_height = original_height;
-    
+
         // first check if we need to scale width
         if (original_width > bound_width) {
             //scale width to fit
@@ -82,7 +82,7 @@ public class MazePanel extends javax.swing.JPanel {
             //scale height to maintain aspect ratio
             new_height = (new_width * original_height) / original_width;
         }
-    
+
         // then check if we need to scale even with the new height
         if (new_height > bound_height) {
             //scale height to fit instead
@@ -90,16 +90,16 @@ public class MazePanel extends javax.swing.JPanel {
             //scale width to maintain aspect ratio
             new_width = (new_height * original_width) / original_height;
         }
-    
+        
         BufferedImage resizedImg = new BufferedImage(new_width, new_height, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2 = resizedImg.createGraphics();
         g2.setBackground(Color.WHITE);
-        g2.clearRect(0,0,new_width, new_height);
+        g2.clearRect(0, 0, new_width, new_height);
         g2.drawImage(image, 0, 0, new_width, new_height, null);
         g2.dispose();
         return resizedImg;
     }
-
+    
     public MazePanel(String path, Settings settings) {
         tileSize = settings.getTileSize();
         doAnimation = settings.isDoAnimation();
@@ -112,7 +112,7 @@ public class MazePanel extends javax.swing.JPanel {
         for (String s : maze) {
             solvedMaze.add(s);
         }
-
+        
         setPreferredSize(new Dimension(cols * tileSize, rows * tileSize));
         initComponents();
     }
@@ -163,51 +163,58 @@ public class MazePanel extends javax.swing.JPanel {
     public void setAnimationSpeed(int speed) {
         animationSpeed = speed;
     }
-
-    public void showSolvedMaze(){   
-        ArrayList<Node> temp = mainMaze.solveMyself();
+    
+    public void showSolvedMaze() {        
+        
         if (doAnimation) {
-            Timer timer = new Timer(1000/animationSpeed, new ActionListener() {
+            ArrayList<Node> temp = mainMaze.solveMyself();
+            Timer timer = new Timer(1000 / animationSpeed, new ActionListener() {
                 int index = 1;
+
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                if (index < temp.size()-1) {
-                    
-                    Node point = temp.get(index);
-                    BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
-                    Graphics2D g2 = updatedImage.createGraphics();
-                    g2.drawImage(image, 0, 0, null);
-                    g2.setPaint(Color.red);
-    
-                    g2.fillRect(point.getY() * tileSize, point.getX() * tileSize, tileSize, tileSize);
-                    g2.dispose();
-                    solvedMaze.set(point.getX(), solvedMaze.get(point.getX()).substring(0, point.getY()) + "#" + solvedMaze.get(point.getX()).substring(point.getY() + 1));
-                    image = updatedImage;
-                    repaint();
-                    index++;
-                } else {
-                    ((Timer) e.getSource()).stop();
-                }
+                    if (index < temp.size() - 1) {
+                        
+                        Node point = temp.get(index);
+                        BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
+                        Graphics2D g2 = updatedImage.createGraphics();
+                        g2.drawImage(image, 0, 0, null);
+                        g2.setPaint(Color.red);
+                        
+                        g2.fillRect(point.getY() * tileSize, point.getX() * tileSize, tileSize, tileSize);
+                        g2.dispose();
+                        solvedMaze.set(point.getX(), solvedMaze.get(point.getX()).substring(0, point.getY()) + "#" + solvedMaze.get(point.getX()).substring(point.getY() + 1));
+                        image = updatedImage;
+                        repaint();
+                        index++;
+                    } else {
+                        ((Timer) e.getSource()).stop();
+                    }
                 }
             });
             timer.start();
         } else {
-            BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
-            Graphics2D g2 = updatedImage.createGraphics();
-            for (int i=1; i<temp.size()-1; i++) {
-                Node point = temp.get(i);
-                g2.drawImage(image, 0, 0, null);
-                g2.setPaint(Color.red);
-                solvedMaze.set(point.getX(), solvedMaze.get(point.getX()).substring(0, point.getY()) + "#" + solvedMaze.get(point.getX()).substring(point.getY() + 1));
-
-                g2.fillRect(point.getY() * tileSize, point.getX() * tileSize, tileSize, tileSize);
-                image = updatedImage;
-            }   
-            g2.dispose();
-            
-            repaint(); 
+            showCompletedMazeWithoutAnimation();
         }
         
+    }
+    
+    public void showCompletedMazeWithoutAnimation() {
+        ArrayList<Node> temp = mainMaze.solveMyself();
+        BufferedImage updatedImage = new BufferedImage(cols * tileSize, rows * tileSize, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2 = updatedImage.createGraphics();
+        for (int i = 1; i < temp.size() - 1; i++) {
+            Node point = temp.get(i);
+            g2.drawImage(image, 0, 0, null);
+            g2.setPaint(Color.red);
+            solvedMaze.set(point.getX(), solvedMaze.get(point.getX()).substring(0, point.getY()) + "#" + solvedMaze.get(point.getX()).substring(point.getY() + 1));
+            
+            g2.fillRect(point.getY() * tileSize, point.getX() * tileSize, tileSize, tileSize);
+            image = updatedImage;
+        }        
+        g2.dispose();
+        
+        repaint();        
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

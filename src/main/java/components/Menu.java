@@ -28,39 +28,40 @@ public class Menu extends javax.swing.JPanel {
     /**
      * Creates new form Menu
      */
-
     private String pathToFile;
     private final MigLayout layout;
     private MenuEventHandler event;
     private SliderHandler sliderEvent;
     private boolean isFileSelected = false;
-    
-    public void addMenuEvent(MenuEventHandler event){
+
+    public void addMenuEvent(MenuEventHandler event) {
         this.event = event;
     }
-    public void addSliderEvent(SliderHandler sliderEvent){
+
+    public void addSliderEvent(SliderHandler sliderEvent) {
         this.sliderEvent = sliderEvent;
     }
-    
-    public void enableSlider(boolean shouldWork){
+
+    public void enableSlider(boolean shouldWork) {
         jSlider1.setEnabled(shouldWork);
     }
-    
-    public String getFilePath(){
+
+    public String getFilePath() {
         return pathToFile;
     }
-    public void setFilePath(String s){
+
+    public void setFilePath(String s) {
         this.pathToFile = s;
     }
-    
-    public void DisplayPath(String path){
+
+    public void DisplayPath(String path) {
         FileNameDisplay.setText(path);
     }
-    
-    public String getFileNameFromPath(String fullPath){
+
+    public String getFileNameFromPath(String fullPath) {
         return Paths.get(fullPath).getFileName().toString();
     }
-     
+
     public Menu() {
         initComponents();
         OptionScrollPane.getViewport().setOpaque(false);
@@ -69,33 +70,36 @@ public class Menu extends javax.swing.JPanel {
         setOpaque(false);
         initMenuItems();
     }
-    
-    void setupItem(MenuItem item){
-        item.addMouseListener(new MouseAdapter(){
+
+    void setupItem(MenuItem item) {
+        item.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseEntered(MouseEvent e){
+            public void mouseEntered(MouseEvent e) {
                 item.setOpaque(true);
                 item.setBackground(item.getBackground().darker());
             }
+
             @Override
-            public void mouseExited(MouseEvent e){
+            public void mouseExited(MouseEvent e) {
                 item.setOpaque(false);
                 item.setBackground(item.getBackground().brighter());
             }
+
             @Override
-            public void mouseClicked(MouseEvent e){
-                if(isFileSelected)
+            public void mouseClicked(MouseEvent e) {
+                if (isFileSelected) {
                     event.selected(item.getId());
-                
+                }
+
             }
         });
         OptionPanel.add(item);
     }
-    
+
     private ArrayList<MenuItem> menuItems = new ArrayList<>();
-    
-    void initMenuItems(){
-        
+
+    void initMenuItems() {
+
         menuItems.add(new MenuItem("SOLVE"));
         menuItems.add(new MenuItem("CLEAR"));
         menuItems.add(new MenuItem("SET START"));
@@ -107,8 +111,11 @@ public class Menu extends javax.swing.JPanel {
             item.setId(i); // Assign a unique ID to each menu item
             setupItem(item);
         }
-        
-        
+
+    }
+
+    public void enableButtons() {
+        isFileSelected = true;
     }
 
     @Override
@@ -262,48 +269,47 @@ public class Menu extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public String getPathToExport(){
+    public String getPathToExport() {
         String dir = System.getProperty("user.dir");
-        
+
         JFileChooser j = new JFileChooser(dir);
- 
-            // invoke the showsOpenDialog function to show the save dialog
-            int r = j.showSaveDialog(null);
- 
-            // if the user selects a file
-            if (r == JFileChooser.APPROVE_OPTION)
- 
-            {
-                // set the label to the path of the selected file
-                return (j.getSelectedFile().getPath());
-            }
-            // if the user cancelled the operation
-            else
-                return null;
+
+        // invoke the showsOpenDialog function to show the save dialog
+        int r = j.showSaveDialog(null);
+
+        // if the user selects a file
+        if (r == JFileChooser.APPROVE_OPTION) {
+            // set the label to the path of the selected file
+            return (j.getSelectedFile().getPath());
+        } // if the user cancelled the operation
+        else {
+            return null;
+        }
+    }
+
+    public void selectFile(String path) {
+        pathToFile = (path);
+        event.selected(-1);
+        enableButtons();
     }
 
     private void SetFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetFileButtonActionPerformed
         String dir = System.getProperty("user.dir");
-        
+
         JFileChooser j = new JFileChooser(dir);
- 
-            // invoke the showsOpenDialog function to show the save dialog
-            int r = j.showOpenDialog(null);
- 
-            // if the user selects a file
-            if (r == JFileChooser.APPROVE_OPTION)
- 
-            {
-                // set the label to the path of the selected file
-                pathToFile = (j.getSelectedFile().getPath());
-                event.selected(-1);
-                isFileSelected = true;
-            }
-            // if the user cancelled the operation
-            else
+
+        // invoke the showsOpenDialog function to show the save dialog
+        int r = j.showOpenDialog(null);
+
+        // if the user selects a file
+        if (r == JFileChooser.APPROVE_OPTION) {
+            // set the label to the path of the selected file
+            selectFile(j.getSelectedFile().getPath());
+        } // if the user cancelled the operation
+        else
                 ;
-                //do literally nothing
-        
+        //do literally nothing
+
     }//GEN-LAST:event_SetFileButtonActionPerformed
 
     private void jSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSlider1StateChanged

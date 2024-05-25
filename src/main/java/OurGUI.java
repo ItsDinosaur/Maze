@@ -63,17 +63,48 @@ public class OurGUI extends JFrame implements ConsoleObserver {
                 break;
             case "exit":
                 exitApp();
+                break;
+            case "solve":
+                mazeHolder.clearMaze();
+                addLogEvent("Rozwiazywanie labiryntu...");
+                isSolving = true;
+                mazeHolder.showCompletedMazeWithoutAnimation();
+                break;
+            case "load":
+                menu1.selectFile(parsedPath);
+                break;
             default:
-                // Well, totally nothing heeereeee
+            // Well, totally nothing heeereeee
         }
     }
-    private void exitApp(){
+    
+    public void setParsedPath(String path){
+        this.parsedPath = path;
+    }
+
+    private void exitApp() {
         try {
             settingsFrame.dispose();
         } catch (Exception e) {
             // Nothin heeeeeere
         }
         System.exit(0);
+    }
+    
+    
+
+    private void fileChosenLoadMaze(String parsedPath) {
+        menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
+        mazeHolder = new MazePanel(parsedPath, sets);
+        addLogEvent("Wczytano plik: " + menu1.getFileNameFromPath(parsedPath));
+        isSolving = false;
+        ReloadForm(mazeHolder);
+    }
+
+    private void solveButtonClicked() {
+        addLogEvent("Rozwiazywanie labiryntu...");
+        isSolving = true;
+        mazeHolder.showSolvedMaze();
     }
 
     private OurGUI() {
@@ -90,18 +121,11 @@ public class OurGUI extends JFrame implements ConsoleObserver {
                 switch (option) {
                     //File was chosen, reload scroll panel
                     case -1:
-                        parsedPath = menu1.getFilePath();
-                        menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
-                        mazeHolder = new MazePanel(parsedPath, sets);
-                        addLogEvent("Wczytano plik: " + menu1.getFileNameFromPath(parsedPath));
-                        isSolving = false;
-                        ReloadForm(mazeHolder);
+                        fileChosenLoadMaze(menu1.getFilePath());
                         break;
                     //Solve button was clicked, lock buttons, solve maze
                     case 0:
-                        addLogEvent("Rozwiazywanie labiryntu...");
-                        isSolving = true;
-                        mazeHolder.showSolvedMaze();
+                        solveButtonClicked();
                         break;
                     // Clear button was clicked, clear maze from solved
                     case 1:

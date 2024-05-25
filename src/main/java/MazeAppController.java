@@ -15,7 +15,7 @@ public class MazeAppController {
     Scanner scanner = new Scanner(System.in);
     static OurGUI gui;
 
-    private static String helpText = "Type 'show' or 'hide' to manage the display of the GUI, 'file %filename%' or 'exit' to quit.";
+    private static String helpText = "Type 'show' or 'hide' to manage the display of the GUI, or 'exit' to quit..";
     
     public static void main(String args[]) {   
         MazeAppController mac = new MazeAppController();
@@ -29,6 +29,13 @@ public class MazeAppController {
         observerSubject.addObserver(gui);
         System.out.println("Totally the best maze solver out there (;");
         System.out.println(helpText);
+        if(args.length > 0){
+            gui.state("showGUI");
+            gui.setParsedPath(args[0]);
+            gui.state("load");
+            gui.state("solve");
+            
+        }
         mac.doThingsSuchAsReadCommands();
     }
 
