@@ -5,10 +5,10 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class BinaryMazeReader {
+public class BinaryMazeConverter {
     public void binToTxt(String filePath) throws IOException {
         try (DataInputStream input = new DataInputStream(new FileInputStream(filePath));
-             FileWriter output = new FileWriter( "tmp.txt")) {
+             FileWriter output = new FileWriter("Maze/OtherFiles/tmp.txt")) {
 
             int id = Integer.reverseBytes(input.readInt());
             int escape = input.read();

@@ -2,6 +2,7 @@ package code;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,6 +21,39 @@ public class Maze {
     
 
     public Maze(String filePath){
+
+        File file = new File(filePath);
+        String extension = "";
+
+        if (file.exists()) {
+            fileName = file.getName();
+            System.out.println("Najpierw filename to: " + fileName);
+
+            if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0) {
+                extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+            }
+        }
+        else {
+            System.err.println("Ten plik nie istnieje!");
+            System.exit(0);
+        }
+
+        if ("bin".equals(extension)){
+            BinaryMazeConverter bmc = new BinaryMazeConverter();
+            try {
+                bmc.binToTxt(filePath);
+                filePath = "Maze/OtherFiles/tmp.txt";
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+
+        if (!("bin".equals(extension) || "txt".equals(extension))){
+            System.err.println("Ten plik nie jest labiryntem w akceptowalnej formie!");
+            System.exit(0);
+        }
+
+
         startVertex = new int[2];
         endVertex = new int[2];
         fileName = filePath;
@@ -40,7 +74,6 @@ public class Maze {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-      
     }
 
     public void changeTile(int x, int y, char tile){
