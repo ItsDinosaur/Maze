@@ -134,9 +134,11 @@ public class OurGUI extends JFrame implements ConsoleObserver {
                         break;
                     // Set Start button was clicked, set start
                     case 2:
+                        mazeHolder.startMouseListener(0);
                         break;
                     // Set End button was clicked, set end
                     case 3:
+                        mazeHolder.startMouseListener(1);
                         break;
                     // Export button was clicked, export maze
                     case 4:

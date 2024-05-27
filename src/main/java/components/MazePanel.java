@@ -16,6 +16,8 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOError;
@@ -24,6 +26,9 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
+import javax.swing.event.MouseInputAdapter;
+
+import org.w3c.dom.events.MouseEvent;
 
 /**
  *
@@ -40,6 +45,7 @@ public class MazePanel extends javax.swing.JPanel {
     private int animationSpeed = 100;
     public boolean doAnimation;
     private BufferedImage image;
+    private int cellToChange;//0 - start, 1 - end
     
     public void updateSettings(Settings settings) {
         tileSize = settings.getTileSize();
@@ -51,12 +57,6 @@ public class MazePanel extends javax.swing.JPanel {
     public void reloadMazeOnGUI(ArrayList<String> mazeToDraw) {
         image = createImage(mazeToDraw);
         repaint();
-    }
-    
-    public void remapStartEnd(Node startPunkt, Node endPunkt) {
-        mainMaze.setStart(startPunkt.getX(), startPunkt.getY());
-        mainMaze.setEnd(endPunkt.getX(), endPunkt.getY());
-        reloadMazeOnGUI(maze);
     }
     
     public void clearMaze() {
@@ -115,6 +115,24 @@ public class MazePanel extends javax.swing.JPanel {
         
         setPreferredSize(new Dimension(cols * tileSize, rows * tileSize));
         initComponents();
+        addMouseListener(new MouseInputAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                if(mouseListenerIsActive){
+                    int y = e.getX() / tileSize;
+                    int x = e.getY() / tileSize;
+                    if(cellToChange == 0){
+                        mainMaze.setStart(x, y);
+                        clearMaze();
+                    } else if(cellToChange == 1){
+                        mainMaze.setEnd(x, y);
+                        clearMaze();
+                    }
+                    cellToChange = -10;
+                    stopMouseListener();
+                }   
+            }
+        });
     }
     
     private BufferedImage createImage(ArrayList<String> mazeToDraw) {
@@ -237,4 +255,18 @@ public class MazePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+
+    private boolean mouseListenerIsActive;
+
+    public void startMouseListener (int option) {
+        cellToChange = option;
+        mouseListenerIsActive = true;
+    }
+
+    public void stopMouseListener () {
+        mouseListenerIsActive = false;
+    }
+
+
+
 }
