@@ -151,7 +151,6 @@ public class SettingsCustomFrame extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             TileSizeInput.setText("7");
         }*/
-        jCheckBox1ActionPerformed(evt);
         TileSizeInputActionPerformed(evt);
         
         

@@ -131,6 +131,7 @@ public class OurGUI extends JFrame implements ConsoleObserver {
                     case 1:
                         addLogEvent("Czyszczenie labiryntu...");
                         mazeHolder.clearMaze();
+                        isSolving=false;
                         break;
                     // Set Start button was clicked, set start
                     case 2:

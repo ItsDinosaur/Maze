@@ -51,7 +51,11 @@ public class MazePanel extends javax.swing.JPanel {
         tileSize = settings.getTileSize();
         doAnimation = settings.isDoAnimation();
         setPreferredSize(new Dimension(cols * tileSize, rows * tileSize));
-        reloadMazeOnGUI(solvedMaze);        
+        System.out.println("I will reload SolvedMaze");
+        reloadMazeOnGUI(solvedMaze);
+        for (String s : solvedMaze){
+            System.out.println(s);
+        }
     }
     
     public void reloadMazeOnGUI(ArrayList<String> mazeToDraw) {
@@ -60,10 +64,16 @@ public class MazePanel extends javax.swing.JPanel {
     }
     
     public void clearMaze() {
+        try{
+            timer.stop();
+        }catch(Exception e){
+            //Perfectly normal
+        }
         solvedMaze = new ArrayList<>();
         for (String s : maze) {
             solvedMaze.add(s);
         }
+        System.out.println("I've cleared solvedMaze, now it should be normal maze");
         reloadMazeOnGUI(maze);
     }
     
@@ -181,12 +191,12 @@ public class MazePanel extends javax.swing.JPanel {
     public void setAnimationSpeed(int speed) {
         animationSpeed = speed;
     }
-    
+    private Timer timer;
     public void showSolvedMaze() {        
         
         if (doAnimation) {
             ArrayList<Node> temp = mainMaze.solveMyself();
-            Timer timer = new Timer(1000 / animationSpeed, new ActionListener() {
+            timer = new Timer(1000 / animationSpeed, new ActionListener() {
                 int index = 1;
 
                 @Override
