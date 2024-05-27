@@ -31,6 +31,7 @@ public class Maze {
 
             if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0) {
                 extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+                System.out.println("Extension: " + extension);
             }
         }
         else {
@@ -42,7 +43,7 @@ public class Maze {
             BinaryMazeConverter bmc = new BinaryMazeConverter();
             try {
                 bmc.binToTxt(filePath);
-                filePath = "Maze/OtherFiles/tmp.txt";
+                filePath = "tmp.txt";
             } catch (IOException e){
                 e.printStackTrace();
             }
