@@ -1,6 +1,7 @@
 ObserverSubject.class
 events/SettingsHandler.class
 code/BinaryMazeConverter.class
+OurTUI.class
 components/Menu$2.class
 components/SettingsCustomFrame$4.class
 code/Node.class
@@ -17,11 +18,11 @@ OurGUI$4.class
 components/MazePanel$2.class
 code/Maze.class
 components/Menu.class
-ConsoleObserver.class
+Observer.class
 OurGUI$1.class
 OurGUI$3.class
-events/SliderHandler.class
 code/GraphHandler.class
+events/SliderHandler.class
 components/MenuItem.class
 components/SettingsCustomFrame.class
 OurGUI.class

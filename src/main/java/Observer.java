@@ -7,6 +7,6 @@
  *
  * @author maciek
  */
-public interface ConsoleObserver {
+public interface Observer {
     public void state(String currentState);
 }

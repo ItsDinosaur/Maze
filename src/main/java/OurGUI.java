@@ -26,7 +26,7 @@ import javax.swing.JFrame;
  *
  * @author maciek
  */
-public class OurGUI extends JFrame implements ConsoleObserver {
+public class OurGUI extends JFrame implements Observer {
 
     /**
      * Creates new form OurGUI
@@ -45,7 +45,7 @@ public class OurGUI extends JFrame implements ConsoleObserver {
             invokeAndWait(new Runnable() {
                 public void run() {
                     instance = new OurGUI();
-                    System.err.println("I created new GUI");
+                    
                 }
             });
         }

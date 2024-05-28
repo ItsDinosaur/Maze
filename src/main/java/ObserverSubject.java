@@ -11,19 +11,19 @@ import java.util.ArrayList;
  * @author maciek
  */
 public class ObserverSubject {
-    private ArrayList<ConsoleObserver> observers = new ArrayList<>();
+    private ArrayList<Observer> observers = new ArrayList<>();
     private String state;
 
-    public void addObserver(ConsoleObserver observer) {
+    public void addObserver(Observer observer) {
         observers.add(observer);
     }
 
-    public void removeObserver(ConsoleObserver observer) {
+    public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
     public void notifyObservers() {
-        for (ConsoleObserver observer : observers) {
+        for (Observer observer : observers) {
             observer.state(state);
         }
     }
