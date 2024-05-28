@@ -1,4 +1,6 @@
+ObserverSubject.class
 events/SettingsHandler.class
+code/BinaryMazeConverter.class
 components/Menu$2.class
 components/SettingsCustomFrame$4.class
 code/Node.class
@@ -12,6 +14,7 @@ components/WaitForFilePanel.class
 components/RootPanel.class
 components/MazePanel.class
 OurGUI$4.class
+components/MazePanel$2.class
 code/Maze.class
 components/Menu.class
 ConsoleObserver.class
@@ -29,3 +32,4 @@ components/SettingsCustomFrame$3.class
 components/RootPanel$2.class
 events/MenuEventHandler.class
 components/Menu$1.class
+OurGUI$2$1.class

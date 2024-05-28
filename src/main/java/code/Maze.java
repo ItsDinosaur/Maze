@@ -49,10 +49,7 @@ public class Maze {
             }
         }
 
-        if (!("bin".equals(extension) || "txt".equals(extension))){
-            System.err.println("Ten plik nie jest labiryntem w akceptowalnej formie!");
-            System.exit(0);
-        }
+
 
 
         startVertex = new int[2];

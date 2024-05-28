@@ -77,7 +77,7 @@ public class OurGUI extends JFrame implements ConsoleObserver {
             // Well, totally nothing heeereeee
         }
     }
-    
+
     public void setParsedPath(String path){
         this.parsedPath = path;
     }
@@ -90,8 +90,8 @@ public class OurGUI extends JFrame implements ConsoleObserver {
         }
         System.exit(0);
     }
-    
-    
+
+
 
     private void fileChosenLoadMaze(String parsedPath) {
         menu1.DisplayPath(menu1.getFileNameFromPath(parsedPath));
@@ -102,6 +102,7 @@ public class OurGUI extends JFrame implements ConsoleObserver {
     }
 
     private void solveButtonClicked() {
+        mazeHolder.clearMaze();
         addLogEvent("Rozwiazywanie labiryntu...");
         isSolving = true;
         mazeHolder.showSolvedMaze();
