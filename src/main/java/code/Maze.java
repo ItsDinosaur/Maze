@@ -94,7 +94,7 @@ public class Maze {
     public void setStart(int x, int y) {
         // Remove previous one
         changeTile(startVertex[0], startVertex[1], replacerChar);
-        System.err.println("Should've changed " + startVertex[0] + "," + startVertex[1]);
+       
 
         // Set up new one
         changeTile(x, y, 'P');
