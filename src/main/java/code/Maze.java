@@ -12,45 +12,39 @@ public class Maze {
     private int rows;
     private int cols;
     private String fileName;
-    
+
     private int[] startVertex;
     private int[] endVertex;
 
     public char replacerChar = 'X';
-    
-    
 
-    public Maze(String filePath){
-
+    public Maze(String filePath) {
         File file = new File(filePath);
         String extension = "";
 
         if (file.exists()) {
             fileName = file.getName();
-            System.out.println("Najpierw filename to: " + fileName);
 
-            if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0) {
+            if (
+                fileName.lastIndexOf(".") != -1 &&
+                fileName.lastIndexOf(".") != 0
+            ) {
                 extension = fileName.substring(fileName.lastIndexOf(".") + 1);
-                System.out.println("Extension: " + extension);
             }
-        }
-        else {
+        } else {
             System.err.println("Ten plik nie istnieje!");
             System.exit(0);
         }
 
-        if ("bin".equals(extension)){
+        if ("bin".equals(extension)) {
             BinaryMazeConverter bmc = new BinaryMazeConverter();
             try {
                 bmc.binToTxt(filePath);
                 filePath = "tmp.txt";
-            } catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
-
 
         startVertex = new int[2];
         endVertex = new int[2];
@@ -74,15 +68,15 @@ public class Maze {
         }
     }
 
-    public void changeTile(int x, int y, char tile){
+    public void changeTile(int x, int y, char tile) {
         String row = maze.get(x);
         char[] rowArray = row.toCharArray();
         rowArray[y] = tile;
         row = new String(rowArray);
         maze.set(x, row);
-    }  
-    
-    public void setStart(int x, int y){
+    }
+
+    public void setStart(int x, int y) {
         // Remove previous one
         changeTile(startVertex[0], startVertex[1], replacerChar);
 
@@ -92,7 +86,7 @@ public class Maze {
         this.startVertex[1] = y;
     }
 
-    public void setEnd(int x, int y){
+    public void setEnd(int x, int y) {
         // Remove previous one
         changeTile(endVertex[0], endVertex[1], replacerChar);
 
@@ -102,30 +96,33 @@ public class Maze {
         this.endVertex[1] = y;
     }
 
-    public int[] getStart(){
+    public int[] getStart() {
         return startVertex;
     }
-    public int[] getEnd(){
+
+    public int[] getEnd() {
         return endVertex;
     }
 
-    public ArrayList<String> getMazeFromTXT(){
+    public ArrayList<String> getMazeFromTXT() {
         return maze;
     }
-    public int getXSize(){
+
+    public int getXSize() {
         return rows;
     }
-    public int getYSize(){
+
+    public int getYSize() {
         return cols;
     }
 
-    public void printMaze(){
-        for(String s : maze){
+    public void printMaze() {
+        for (String s : maze) {
             System.out.println(s);
         }
     }
-    
-    public ArrayList<Node> solveMyself(){
+
+    public ArrayList<Node> solveMyself() {
         GraphHandler mz = new GraphHandler(this);
         Thread solver = new Thread(mz);
         solver.start();
@@ -136,5 +133,4 @@ public class Maze {
         }
         return mz.getSolution();
     }
-
 }
