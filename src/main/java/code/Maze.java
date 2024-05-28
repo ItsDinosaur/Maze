@@ -66,6 +66,21 @@ public class Maze {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        
+        for(int i=0; i<cols; i++){
+            for(int j=0; j<rows; j++){
+                if (maze.get(i).charAt(j) == 'P'){
+                    startVertex[0]=i;
+                    startVertex[1]=j;
+                }
+                if (maze.get(i).charAt(j) == 'K'){
+                    endVertex[0]=i;
+                    endVertex[1]=j;
+                }
+            }
+        }
+        
+        
     }
 
     public void changeTile(int x, int y, char tile) {
@@ -79,6 +94,7 @@ public class Maze {
     public void setStart(int x, int y) {
         // Remove previous one
         changeTile(startVertex[0], startVertex[1], replacerChar);
+        System.err.println("Should've changed " + startVertex[0] + "," + startVertex[1]);
 
         // Set up new one
         changeTile(x, y, 'P');
@@ -131,6 +147,7 @@ public class Maze {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("Maze was solved!  Hurray!");
         return mz.getSolution();
     }
 }

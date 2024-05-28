@@ -38,7 +38,6 @@ public class OurTUI implements Observer{
             case "solve":
                 setSolvedMaze(maze.solveMyself());
                 isSolved = true;
-                System.out.println("Maze was solved!  Hurray!");
                 break;
             case "print":
                 if(notSolvedMaze == null){

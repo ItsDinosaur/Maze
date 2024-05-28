@@ -50,22 +50,11 @@ public class GraphHandler implements Runnable {
         visited = new boolean[mazeFull.getXSize()][mazeFull.getYSize()];
         makeCharFromString(mazeFull);
         graph = new HashMap<Node, Node>(); // <dziecko,rodzic>, dziecko jest kluczem
-
-        // tymczasowe od tad
-        for (int i = 0; i < visited.length; i++) {
-            for (int j = 0; j < visited[i].length; j++) {
-                if (maze[i][j] == 'P') {
-                    mazeFull.setStart(i, j);
-                    startNode = new Node(i, j);
-                }
-                if (maze[i][j] == 'K') {
-                    mazeFull.setEnd(i, j);
-                    endNode = new Node(i, j);
-                }
-            }
-        }
-        // tymczasowe do tad, bedzie mozna usunac gdy w klasa Maze bedzie sama
-        // znajdowala startNode i endNode
+        
+        
+        startNode = new Node(mazeFull.getStart()[0], mazeFull.getStart()[1]);
+        endNode = new Node(mazeFull.getEnd()[0], mazeFull.getEnd()[1]);
+        
 
         for (int i = 0; i < visited.length; i++) {
             for (int j = 0; j < visited[i].length; j++) {
