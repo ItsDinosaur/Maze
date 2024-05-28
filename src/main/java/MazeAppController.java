@@ -17,7 +17,7 @@ public class MazeAppController {
     static OurGUI gui;
     static OurTUI tui;
 
-    private static String helpText = "Type 'load' to load a file, 'solve' to solve a maze, 'print' to print loaded maze, 'help' for help, or 'exit' to quit..";
+    private static String helpText = "Type 'load' to load a file, 'solve' to solve a maze, 'print' to print loaded maze, 'help' for help, 'show'/'hide' to show/hide GUI (if enabled), or 'exit' to quit..";
     private static String broaderHelpText = "- \033[34m'load'\033[0m to load a file -- (Me) the program will nicely ask you to provide the path later, you'll see,\n"
                + "- \033[34m'solve'\033[0m to solve a maze -- just type solve and the magic will happen,\n"
                + "- \033[34m'print'\033[0m to print loaded maze -- if no loaded maze Me will be sad you're trying to break it but Me will not lose this fight,\n"
@@ -35,7 +35,7 @@ public class MazeAppController {
             return;
         }
         observerSubject.addObserver(gui);
-        //observerSubject.addObserver(tui);
+        observerSubject.addObserver(tui);
         System.out.println("Totally the best maze solver out there (;");
         System.out.println(helpText); 
         if(args.length > 0){
@@ -78,6 +78,12 @@ public class MazeAppController {
                 System.out.println("Bye byeee....");
                 observerSubject.setState("exit");
                 break;
+            }
+            else if (command.equalsIgnoreCase("show")) {
+                gui.state("showGUI");
+            }
+            else if (command.equalsIgnoreCase("hide")) {
+                gui.state("hideGUI");
             }
             else if (command.equalsIgnoreCase("help")){
                 System.out.println(broaderHelpText);
