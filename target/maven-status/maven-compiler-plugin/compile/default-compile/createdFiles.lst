@@ -3,14 +3,14 @@ events/SettingsHandler.class
 code/BinaryMazeConverter.class
 OurTUI.class
 components/Menu$2.class
-components/SettingsCustomFrame$4.class
 code/Node.class
+components/SettingsCustomFrame$4.class
 OurGUI$2.class
+code/Settings.class
 components/Menu$3.class
 components/RootPanel$1.class
-code/Settings.class
-components/SettingsCustomFrame$2.class
 MazeAppController.class
+components/SettingsCustomFrame$2.class
 components/WaitForFilePanel.class
 components/RootPanel.class
 components/MazePanel.class

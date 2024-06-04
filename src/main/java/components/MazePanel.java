@@ -134,7 +134,7 @@ public class MazePanel extends javax.swing.JPanel {
                             mainMaze.setEnd(x, y);
                         }
                         maze = mainMaze.getMazeFromTXT();
-                        System.out.println(maze);
+                        
                         clearMaze();
                         
                         cellToChange = -10;
